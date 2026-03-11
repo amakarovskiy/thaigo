@@ -46,10 +46,14 @@ function initMap() {
     }
   );
 
-  // Try CARTO, fallback to OSM
+  // Try CARTO dark, fallback to OSM only after multiple failures
+  var _tileErrors = 0;
   darkLayer.on('tileerror', function () {
-    leafletMap.removeLayer(darkLayer);
-    osmLayer.addTo(leafletMap);
+    _tileErrors++;
+    if (_tileErrors >= 5) {
+      leafletMap.removeLayer(darkLayer);
+      osmLayer.addTo(leafletMap);
+    }
   });
   darkLayer.addTo(leafletMap);
 
@@ -98,18 +102,19 @@ function createPlaceMarkers() {
       markerOpts.zIndexOffset = 1000;
     }
     const marker = L.marker([place.lat, place.lng], markerOpts);
+    var isMob = window.innerWidth <= 768;
     marker.bindPopup(function () { return buildPopup(place); }, {
-      maxWidth: 300,
+      maxWidth: isMob ? 280 : 300,
       autoPan: true,
-      autoPanPadding: L.point(40, 40)
+      autoPanPadding: isMob ? L.point(20, 180) : L.point(40, 40)
     });
     marker.on('click', function () {
       // Gently pan to show marker+popup without aggressive zoom
       var currentZoom = leafletMap.getZoom();
-      var targetZoom = Math.max(currentZoom, 12); // don't zoom beyond 12 on click
-      // Offset so popup (above marker) stays visible
+      var targetZoom = Math.max(currentZoom, 12);
+      // Offset so popup stays visible below top UI (larger offset on mobile)
       var px = leafletMap.project([place.lat, place.lng], targetZoom);
-      px.y -= 80;
+      px.y -= (window.innerWidth <= 768) ? 200 : 80;
       var offsetLatLng = leafletMap.unproject(px, targetZoom);
       leafletMap.flyTo(offsetLatLng, targetZoom, { duration: 0.6 });
     });

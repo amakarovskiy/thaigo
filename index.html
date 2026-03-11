@@ -188,6 +188,10 @@
       >
     </a>
 
+    <span class="header-mobile-title">
+      <span data-i18n="hero.title">🗺️ Планировщик маршрутов</span> <span class="hero-accent" data-i18n="hero.accent">ПХУКЕТА</span>
+    </span>
+
     <nav class="header-nav">
       <a href="https://thaigo.rent/#book-form" data-i18n="nav.book">Забронировать</a>
       <a href="https://thaigo.rent/#catalog" data-i18n="nav.catalog">Каталог</a>
@@ -333,6 +337,13 @@
             </button>
           </div>
         </template>
+      </div>
+
+      <!-- Build route button (mobile, visible when 2+ places selected) -->
+      <div class="build-route-block" x-show="route.length >= 2" x-transition>
+        <button class="build-route-btn" @click="switchTab('route'); setSheetState('half')">
+          <span x-text="'🗺 ' + tt('sheet.route') + ' (' + route.length + ')'"></span>
+        </button>
       </div>
 
       <!-- Presets & Generator (bottom of left panel) -->

@@ -175,7 +175,10 @@ function initMobileSheet(panelRef) {
     panelRef.setSheetState(next);
   }
 
+  // Handle + tabs are both drag targets
   handle.addEventListener('touchstart', onTouchStart, { passive: true });
+  var tabs = sheet.querySelector('.sheet-tabs');
+  if (tabs) tabs.addEventListener('touchstart', onTouchStart, { passive: true });
   document.addEventListener('touchmove', onTouchMove, { passive: false });
   document.addEventListener('touchend', onTouchEnd, { passive: true });
 
@@ -186,11 +189,14 @@ function initMobileSheet(panelRef) {
   // Allow dragging sheet down when content is scrolled to top
   if (content) {
     content.addEventListener('touchstart', function (e) {
-      if (panelRef.sheetState !== 'expanded' || content.scrollTop > 0) return;
+      if (content.scrollTop > 0) return;
+      // Allow pull-down in any state (half or expanded)
+      if (panelRef.sheetState === 'collapsed') return;
       var touchY = e.touches[0].clientY;
       var moved = false;
       var moveH = function (ev) {
-        if (!moved && ev.touches[0].clientY - touchY > 15) {
+        var dy = ev.touches[0].clientY - touchY;
+        if (!moved && dy > 10) {
           moved = true;
           onTouchStart(e);
         }
@@ -310,10 +316,7 @@ function panelData() {
           setTimeout(function () { showShareHint(); }, 600);
         }
 
-        // Mobile: auto-switch to route tab when place added
-        if (window.innerWidth <= 768 && data.places.length > 0) {
-          self.switchTab('route');
-        }
+        // Mobile: DON'T auto-switch to route tab (user picks places first)
       });
 
       // Init map after DOM ready

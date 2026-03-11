@@ -201,6 +201,11 @@ img { display: block; max-width: 100%; }
   border-color: var(--green);
 }
 
+/* Mobile header title (hidden on desktop) */
+.header-mobile-title {
+  display: none;
+}
+
 /* Burger */
 .burger {
   display: none;
@@ -652,6 +657,20 @@ img { display: block; max-width: 100%; }
   .header-back { display: none; }
   .lang-switch { display: none; }
   .burger { display: flex; }
+
+  .header-mobile-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   .hero { display: none; }
 

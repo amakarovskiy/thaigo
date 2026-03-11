@@ -369,6 +369,13 @@
   color: var(--green) !important;
 }
 
+/* ===== Mobile: popup above floating UI ===== */
+@media (max-width: 768px) {
+  .leaflet-popup-pane {
+    z-index: 800 !important;
+  }
+}
+
 /* ===== Mobile: reposition Leaflet controls ===== */
 @media (max-width: 768px) {
   .leaflet-control-zoom {

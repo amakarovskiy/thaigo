@@ -212,6 +212,41 @@
   font-size: 14px;
 }
 
+/* ===== Build route button (mobile) ===== */
+.build-route-block {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .build-route-block {
+    display: block;
+    padding: 8px 12px;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background: linear-gradient(to top, var(--panel) 60%, transparent);
+    padding-top: 20px;
+  }
+
+  .build-route-btn {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 800;
+    background: var(--green);
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background .15s;
+    text-align: center;
+  }
+
+  .build-route-btn:hover {
+    background: var(--gdk);
+  }
+}
+
 /* ===== Generator & Presets (left panel bottom) ===== */
 .gen-block {
   flex-shrink: 0;
