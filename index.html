@@ -339,13 +339,6 @@
         </template>
       </div>
 
-      <!-- Build route button (mobile, visible when 2+ places selected) -->
-      <div class="build-route-block" x-show="route.length >= 2" x-transition>
-        <button class="build-route-btn" @click="switchTab('route'); setSheetState('half')">
-          <span x-text="'🗺 ' + tt('sheet.route') + ' (' + route.length + ')'"></span>
-        </button>
-      </div>
-
       <!-- Presets & Generator (bottom of left panel) -->
       <div class="gen-block">
         <div class="gen-row">
@@ -531,6 +524,13 @@
 
       </div><!-- .sheet-content -->
     </div><!-- .mobile-sheet -->
+
+    <!-- Build route button (mobile, fixed at bottom, visible when 2+ places selected) -->
+    <div class="build-route-block" x-show="route.length >= 2 && sheetTab === 'places'" x-transition>
+      <button class="build-route-btn" @click="switchTab('route'); setSheetState('half')">
+        <span x-text="'🗺 ' + tt('sheet.route') + ' (' + route.length + ')'"></span>
+      </button>
+    </div>
 
   </main>
 
