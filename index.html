@@ -217,6 +217,19 @@
 
     <a href="https://thaigo.rent" class="header-back" data-i18n="nav.back">← На главную</a>
 
+    <!-- Mobile header language switcher -->
+    <div class="header-lang-mobile" x-data="{ open: false }" @click.outside="open = false">
+      <button class="lang-btn-m" @click="open = !open" aria-label="Language">
+        <span x-text="$store.i18n.lang.toUpperCase()"></span>
+      </button>
+      <div class="lang-dropdown-m" x-show="open" x-transition.opacity>
+        <button class="lang-opt-m" :class="{ active: $store.i18n.lang === 'ru' }" @click="$store.i18n.setLang('ru'); open = false">RU</button>
+        <button class="lang-opt-m" :class="{ active: $store.i18n.lang === 'en' }" @click="$store.i18n.setLang('en'); open = false">EN</button>
+        <button class="lang-opt-m" :class="{ active: $store.i18n.lang === 'fr' }" @click="$store.i18n.setLang('fr'); open = false">FR</button>
+        <button class="lang-opt-m" :class="{ active: $store.i18n.lang === 'de' }" @click="$store.i18n.setLang('de'); open = false">DE</button>
+      </div>
+    </div>
+
     <button class="burger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">☰</button>
   </header>
 
@@ -679,6 +692,7 @@
   <script defer src="js/lang/fr.js"></script>
   <script defer src="js/lang/de.js"></script>
   <script defer src="js/lang/places-en.js"></script>
+  <script defer src="js/lang/places-ru.js"></script>
   <script defer src="js/lang/places-fr.js"></script>
   <script defer src="js/lang/places-de.js"></script>
   <!-- App JS (defer preserves order; must load before Alpine) -->

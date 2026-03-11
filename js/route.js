@@ -25,7 +25,6 @@ const Route = {
     if (this.has(place.id)) return false;
     this._places.push(place);
     this._notify();
-    showToast(t('toast.added', { name: tp(place.id, 'name') || place.name }));
     return true;
   },
 
@@ -35,14 +34,12 @@ const Route = {
     const place = this._places[idx];
     this._places.splice(idx, 1);
     this._notify();
-    showToast(t('toast.removed', { name: tp(place.id, 'name') || place.name }));
   },
 
   clear() {
     if (this._places.length === 0) return;
     this._places = [];
     this._notify();
-    showToast(t('toast.cleared'));
   },
 
   toggle(place) {
@@ -96,7 +93,6 @@ const Route = {
     if (this.has(place.id)) return false;
     this._places.unshift(place);
     this._notify();
-    showToast(t('toast.added_first', { name: tp(place.id, 'name') || place.name }));
     return true;
   },
 
@@ -120,7 +116,6 @@ const Route = {
     }
     this._places = optimized;
     this._notify();
-    showToast(t('toast.optimized'));
   },
 
   initFromURL() {
