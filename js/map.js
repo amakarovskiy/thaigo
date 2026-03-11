@@ -28,12 +28,13 @@ function initMap() {
     position: 'bottomright'
   }).addTo(leafletMap);
 
-  // Dark tiles — Stadia Alidade Smooth Dark
-  const stadiaLayer = L.tileLayer(
-    'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
+  // Dark tiles — CARTO Dark Matter (free, no API key required)
+  const darkLayer = L.tileLayer(
+    'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
     {
       maxZoom: 20,
-      attribution: '© <a href="https://stadiamaps.com/">Stadia Maps</a> • © <a href="https://openmaptiles.org/">OpenMapTiles</a> • © <a href="https://openstreetmap.org/copyright">OpenStreetMap</a>'
+      subdomains: 'abcd',
+      attribution: '© <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> • © <a href="https://carto.com/attributions">CARTO</a>'
     }
   );
 
@@ -45,12 +46,12 @@ function initMap() {
     }
   );
 
-  // Try Stadia, fallback to OSM
-  stadiaLayer.on('tileerror', function () {
-    leafletMap.removeLayer(stadiaLayer);
+  // Try CARTO, fallback to OSM
+  darkLayer.on('tileerror', function () {
+    leafletMap.removeLayer(darkLayer);
     osmLayer.addTo(leafletMap);
   });
-  stadiaLayer.addTo(leafletMap);
+  darkLayer.addTo(leafletMap);
 
   // Zoom control — bottom right
   L.control.zoom({ position: 'bottomright' }).addTo(leafletMap);
