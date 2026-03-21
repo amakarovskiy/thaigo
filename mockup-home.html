@@ -94,7 +94,7 @@ h2.display em { font-style: italic; color: var(--sage); }
 #nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   height: 76px; padding: 0 5vw;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
   transition: background .4s, box-shadow .4s;
 }
 #nav.scrolled {
@@ -626,6 +626,8 @@ footer { background: var(--ink); color: rgba(255,255,255,.5); padding: 72px 8vw 
   .hero-left .hero-sub { font-size: .95rem; max-width: 100%; }
   .hero-btns { flex-direction: column; }
   .hero-btns .btn { text-align: center; justify-content: center; }
+  .hero-btns .btn-outline { border-color: rgba(255,255,255,.7); color: #fff; }
+  .hero-btns .btn-outline:hover { background: rgba(255,255,255,.15); }
   .hero-scroll { display: none; }
 
   /* Trust */
