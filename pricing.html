@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Addiction Rehabilitation in Montenegro | MonteRehab</title>
+<meta name="description" content="Transparent pricing for residential rehabilitation in Montenegro. Eurostandard from €6,000/month. Individual programme from €12,000/month.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://monterehab.com/pricing">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pricing — Addiction Rehabilitation in Montenegro | MonteRehab">
+<meta property="og:description" content="Transparent pricing for residential rehabilitation in Montenegro. Eurostandard from €6,000/month. Individual programme from €12,000/month.">
+<meta property="og:url" content="https://monterehab.com/pricing">
+<meta property="og:image" content="https://images.unsplash.com/photo-1555990793-da11153b2473?w=1200&q=85&auto=format&fit=crop">
+<meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="en" href="https://monterehab.com/pricing.html">
+<link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/pricing.html">
+<link rel="alternate" hreflang="me" href="https://monterehab.com/me/pricing.html">
+<link rel="alternate" hreflang="x-default" href="https://monterehab.com/pricing.html">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://thb.tildacdn.com">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236b9478'/><text x='16' y='24' text-anchor='middle' font-family='Georgia' font-size='22' font-weight='bold' fill='white'>M</text></svg>" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   TOKENS
+══════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --sage:        #6b9478;
+  --sage-mid:    #7fa88c;
+  --sage-light:  #a3bfaa;
+  --sage-pale:   #eaf2ec;
+  --sage-xpale:  #f3f8f4;
+  --warm:        #c8a066;
+  --warm-light:  #f2e8d5;
+  --earth:       #6b5540;
+  --ink:         #1a2318;
+  --ink-mid:     #2d3d2f;
+  --mist:        #f8f6f2;
+  --white:       #ffffff;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', sans-serif;
+  --ease:  cubic-bezier(.25,.46,.45,.94);
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--mist); color: var(--ink); line-height: 1.7; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; }
+
+/* ══════════════════════════════════════
+   BUTTONS
+══════════════════════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--sans); font-size: .76rem;
+  letter-spacing: .14em; text-transform: uppercase;
+  padding: 14px 32px; cursor: pointer; border: none;
+  transition: all .28s var(--ease);
+}
+.btn-sage  { background: var(--sage);  color: #fff; }
+.btn-sage:hover  { background: var(--earth); transform: translateY(-1px); }
+.btn-earth { background: var(--earth); color: #fff; }
+.btn-earth:hover { background: var(--ink); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--sage); border: 1px solid var(--sage); }
+.btn-outline:hover { background: var(--sage); color: #fff; }
+
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 76px; padding: 0 5vw;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(248,246,242,.96);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(107,148,120,.12);
+  transition: box-shadow .3s;
+}
+.nav-logo { font-family: var(--serif); font-size: 1.55rem; font-weight: 500; color: var(--ink); }
+.nav-logo span { color: var(--sage); }
+
+.nav-links { display: flex; gap: 4px; list-style: none; position: relative; min-width: 0; flex: 1; }
+.nav-links > li { position: relative; }
+.nav-links > li > a {
+  display: block; padding: 8px 14px;
+  font-size: .76rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink); opacity: .58; transition: opacity .2s;
+  white-space: nowrap;
+}
+.nav-links > li > a:hover,
+.nav-links > li.has-drop:hover > a { opacity: 1; }
+
+/* dropdown */
+.nav-drop {
+  position: absolute; top: calc(100% + 8px); left: 0;
+  background: var(--white); min-width: 240px;
+  box-shadow: 0 16px 48px rgba(0,0,0,.1);
+  border-top: 2px solid var(--sage);
+  opacity: 0; pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity .22s var(--ease), transform .22s var(--ease);
+  z-index: 100;
+}
+.nav-links > li.has-drop:hover .nav-drop {
+  opacity: 1; pointer-events: all; transform: translateY(0);
+}
+.nav-drop a {
+  display: block; padding: 11px 20px;
+  font-size: .78rem; color: var(--ink); opacity: .7;
+  border-bottom: 1px solid rgba(107,148,120,.08);
+  transition: background .15s, opacity .15s;
+}
+.nav-drop a:last-child { border-bottom: none; }
+.nav-drop a:hover { background: var(--sage-xpale); opacity: 1; }
+
+.nav-right { display: flex; align-items: center; gap: 24px; flex-shrink: 0; }
+.nav-phone { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; color: var(--sage); white-space: nowrap; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
+.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all .3s; }
+
+/* ══════════════════════════════════════
+   PAGE HERO
+══════════════════════════════════════ */
+.page-hero {
+  margin-top: 76px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 420px; overflow: hidden;
+}
+.page-hero-left {
+  background: var(--ink);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 72px 8vw 72px 8vw;
+  position: relative; overflow: hidden;
+}
+.page-hero-left::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,148,120,.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.breadcrumb {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.35); margin-bottom: 24px;
+}
+.breadcrumb a { color: rgba(255,255,255,.35); transition: color .2s; }
+.breadcrumb a:hover { color: var(--sage-light); }
+.breadcrumb .sep { opacity: .3; }
+.breadcrumb .current { color: var(--sage-light); }
+.page-hero-left h1 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  line-height: 1.1; color: var(--white); margin-bottom: 28px;
+}
+.page-hero-left h1 em { font-style: italic; color: var(--sage-light); }
+.page-hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+
+.page-hero-right { position: relative; overflow: hidden; }
+.page-hero-right img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 8s ease;
+}
+.page-hero-right:hover img { transform: scale(1.04); }
+.page-hero-right::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(26,35,24,.25) 0%, transparent 50%);
+}
+
+/* ══════════════════════════════════════
+   ARTICLE LAYOUT — NO SIDEBAR
+══════════════════════════════════════ */
+.article-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 72px;
+  padding: 80px 8vw;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ══════════════════════════════════════
+   PRICING CARDS
+══════════════════════════════════════ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.price-card {
+  background: var(--white);
+  padding: 40px 36px;
+  box-shadow: 0 2px 20px rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s var(--ease), box-shadow .3s;
+}
+.price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,.1);
+}
+.price-card h3 {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.price-amount {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--sage);
+  margin-bottom: 20px;
+}
+.price-card ul {
+  list-style: none;
+  margin-bottom: 28px;
+  flex: 1;
+}
+.price-card ul li {
+  font-size: .88rem;
+  color: #4a5c50;
+  font-weight: 300;
+  line-height: 1.7;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(107,148,120,.08);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.price-card ul li::before {
+  content: '\2713';
+  color: var(--sage);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.price-card .btn { align-self: flex-start; }
+
+.contact-cta { background: var(--ink); padding: 80px 8vw; }
+.contact-cta-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.contact-cta-text h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+.contact-cta-text h2 em { font-style: italic; color: var(--sage-light); }
+.contact-cta-text p { font-size: .92rem; color: rgba(255,255,255,.55); font-weight: 300; line-height: 1.8; margin-bottom: 20px; }
+.cta-phone { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; color: var(--white); }
+.contact-cta-btns { display: flex; flex-direction: column; gap: 14px; }
+.cta-messenger { display: flex; align-items: center; gap: 14px; padding: 16px 24px; background: rgba(255,255,255,.07); color: var(--white); font-size: .88rem; font-weight: 400; letter-spacing: .04em; border: 1px solid rgba(255,255,255,.12); transition: background .2s, border-color .2s; }
+.cta-messenger:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.25); }
+.cta-messenger img { width: 24px; height: 24px; object-fit: contain; }
+
+@media (max-width: 768px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════
+   CONTACT FORM
+══════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════
+   FOOTER SEO
+══════════════════════════════════════ */
+.footer-seo {
+  background: var(--ink-mid); padding: 60px 8vw 36px;
+}
+.footer-seo-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 32px;
+  margin-bottom: 44px;
+}
+.footer-seo-col h4 {
+  font-size: .62rem; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(255,255,255,.25); margin-bottom: 16px; padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.footer-seo-col a {
+  display: block; font-size: .8rem; color: rgba(255,255,255,.4);
+  margin-bottom: 8px; transition: color .2s; line-height: 1.4;
+}
+.footer-seo-col a:hover { color: var(--sage-light); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.06); padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: .72rem; color: rgba(255,255,255,.25); flex-wrap: wrap; gap: 10px;
+}
+.footer-bottom a { color: rgba(255,255,255,.25); transition: color .2s; }
+.footer-bottom a:hover { color: var(--sage-light); }
+.footer-logo-sm { font-family: var(--serif); font-size: 1.1rem; color: rgba(255,255,255,.4); }
+.footer-logo-sm span { color: var(--sage-light); }
+
+/* ══════════════════════════════════════
+   MOBILE STICKY CTA
+══════════════════════════════════════ */
+.mobile-cta {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 300;
+  background: var(--ink); padding: 12px 16px;
+  flex-direction: row; gap: 8px;
+  box-shadow: 0 -4px 24px rgba(0,0,0,.25);
+  border-top: 1px solid rgba(107,148,120,.2);
+}
+.mc-call {
+  flex: 1; background: var(--sage); color: var(--white); border: none;
+  padding: 13px; font-family: var(--sans); font-size: .74rem;
+  letter-spacing: .12em; text-transform: uppercase; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.mc-write {
+  flex: 1; background: rgba(255,255,255,.07); color: rgba(255,255,255,.75);
+  border: 1px solid rgba(255,255,255,.12); padding: 13px;
+  font-family: var(--sans); font-size: .74rem; letter-spacing: .12em;
+  text-transform: uppercase; cursor: pointer; text-align: center; display: flex;
+  align-items: center; justify-content: center;
+}
+
+/* ══════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════ */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: none; }
+.rv1 { transition-delay: .1s; }
+.rv2 { transition-delay: .2s; }
+.rv3 { transition-delay: .3s; }
+
+/* ══════════════════════════════════════
+   HERO ENTRANCE ANIMATION
+══════════════════════════════════════ */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+.breadcrumb  { animation: fadeUp .6s .1s both; }
+.page-hero-left h1   { animation: fadeUp .7s .2s both; }
+.page-hero-cta       { animation: fadeUp .7s .35s both; }
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 1100px) {
+  #nav { padding: 0 4vw; }
+  .article-wrap { padding: 64px 5vw; }
+  .footer-seo-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .contact-cta-inner { gap: 48px; }
+}
+
+@media (max-width: 768px) {
+  /* Nav */
+  #nav { padding: 0 20px; height: 62px; }
+  .nav-links, .nav-right .btn { display: none; }
+  .nav-phone { font-size: .9rem; }
+  .hamburger { display: flex; }
+
+  /* Hero */
+  .page-hero { grid-template-columns: 1fr; min-height: auto; }
+  .page-hero-left { padding: 48px 20px 56px; }
+  .page-hero-left h1 { font-size: 2.4rem; }
+  .page-hero-right { height: 240px; position: relative; }
+  .page-hero-right img { position: absolute; }
+
+  /* Article */
+  .article-wrap { grid-template-columns: 1fr; gap: 48px; padding: 48px 20px; }
+
+  /* Contact CTA */
+  .contact-cta { padding: 56px 20px; }
+  .contact-cta-inner { grid-template-columns: 1fr; gap: 40px; }
+
+  /* Footer */
+  .footer-seo { padding: 48px 20px 28px; }
+  .footer-seo-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  /* Sticky CTA */
+      .mobile-cta { display: flex; }
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Rehabilitation Programme Pricing","offers":[{"@type":"Offer","name":"Eurostandard (double occupancy)","price":"6000","priceCurrency":"EUR"},{"@type":"Offer","name":"Eurostandard (single occupancy)","price":"9000","priceCurrency":"EUR"},{"@type":"Offer","name":"Individual programme Intensive","price":"12000","priceCurrency":"EUR"},{"@type":"Offer","name":"Resocialization and education","price":"3500","priceCurrency":"EUR"}]}
+</script>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Monte<span>Rehab</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-drop">
+      <a href="#">Eating Disorders &#9662;</a>
+      <div class="nav-drop">
+        <a href="residential_treatment.html">Residential treatment</a>
+        <a href="group_therapy.html">Group therapy online</a>
+      </div>
+    </li>
+    <li class="has-drop">
+      <a href="#">Addiction &#9662;</a>
+      <div class="nav-drop">
+        <a href="alcohol_addiction.html">Alcohol addiction</a>
+        <a href="drug_addiction.html">Drug addiction</a>
+        <a href="medical_detox.html">Medical detox</a>
+        <a href="behavioural_addiction_treatment.html">Behavioural addiction treatment</a>
+        <a href="dual_diagnosis.html">Dual diagnosis</a>
+      </div>
+    </li>
+    <li class="has-drop">
+      <a href="#">Mental Health &#9662;</a>
+      <div class="nav-drop">
+        <a href="anxiety_treatment.html">Anxiety treatment</a>
+        <a href="depression_treatment.html">Depression treatment</a>
+        <a href="executive_burnout.html">Executive burnout</a>
+        <a href="insomnia_treatment.html">Insomnia treatment</a>
+        <a href="mood_disorder_treatment.html">Mood disorder treatment</a>
+        <a href="ptsd_and_trauma_treatment.html">PTSD and trauma treatment</a>
+      </div>
+    </li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="contacts.html">Contact us</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switch" style="font-size:.72rem;letter-spacing:.1em;"><strong style="color:var(--sage)">EN</strong> | <a href="ru/pricing.html" style="color:var(--ink);opacity:.45;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.45'" onclick="localStorage.setItem('mr_lang','ru')">RU</a> | <a href="me/pricing.html" style="color:var(--ink);opacity:.45;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.45'" onclick="localStorage.setItem('mr_lang','me')">ME</a></div>
+    <a href="tel:+38269621111" class="nav-phone">+382 69 621 111</a>
+    <a href="contacts.html" class="btn btn-sage">Get in touch</a>
+  </div>
+  <button class="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══════════ PAGE HERO ══════════ -->
+<div class="page-hero">
+  <div class="page-hero-left">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">&rarr;</span>
+      <span class="current">Pricing</span>
+    </div>
+    <h1>Pricing</h1>
+    <div class="page-hero-cta">
+      <a href="#enquiry" class="btn btn-sage">Sign Up now</a>
+      <a href="tel:+38269621111" class="btn btn-outline">+382 69 621 111</a>
+    </div>
+  </div>
+  <div class="page-hero-right">
+    <img
+      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=85"
+      alt="Pricing — Monte Rehab"
+      loading="lazy">
+  </div>
+</div>
+
+<!-- ══════════ PRICING CONTENT ══════════ -->
+<div class="article-wrap">
+  <div class="pricing-grid">
+
+    <!-- Card 1 -->
+    <div class="price-card reveal">
+      <h3>Eurostandard (double occupancy)</h3>
+      <div class="price-amount">from &euro;6,000 / month</div>
+      <ul>
+        <li>First month &ndash; &euro;6,000, second and subsequent &ndash; &euro;5,000</li>
+        <li>If you pay with a package of 3 months &ndash; the cost of the package is &euro;15,000</li>
+        <li>Weekly boat trips, mountain tours and excursion</li>
+      </ul>
+      <a href="#enquiry" class="btn btn-sage">Learn more</a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="price-card reveal rv1">
+      <h3>Eurostandard (single occupancy)</h3>
+      <div class="price-amount">from &euro;9,000 / month</div>
+      <ul>
+        <li>If you pay for 3 months &ndash; the cost of the package is &euro;24,000</li>
+        <li>More than 8 hours of psychotherapy daily</li>
+        <li>4 hours of family psychotherapy as a gift</li>
+      </ul>
+      <a href="#enquiry" class="btn btn-sage">Learn more</a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="price-card reveal rv2">
+      <h3>Individual program &ldquo;Intensive&rdquo;</h3>
+      <div class="price-amount">from &euro;12,000 / month</div>
+      <ul>
+        <li>Accommodation in single apartments</li>
+        <li>Daily Personal Psychotherapy with a Program Manager</li>
+        <li>Accommodation on the territory of the center or independently in the nearest city</li>
+        <li>Daily attendance at compulsory events and meeting with the curator</li>
+      </ul>
+      <a href="#enquiry" class="btn btn-sage">Learn more</a>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="price-card reveal rv3">
+      <h3>Resocialization and education</h3>
+      <div class="price-amount">from &euro;3,500 / month</div>
+      <ul>
+        <li>Support in the process of education and employment</li>
+        <li>The ability to combine recovery with remote work</li>
+      </ul>
+      <a href="#enquiry" class="btn btn-sage">Learn more</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════ CONTACT FORM ══════════ -->
+<section class="contact-cta" id="enquiry">
+  <div class="contact-cta-inner">
+    <div class="contact-cta-text">
+      <h2>Ready to start your <em>recovery journey?</em></h2>
+      <p>Reach out to us — we are available 24/7 and will respond immediately.</p>
+      <div class="cta-phone">+382 69 621 111</div>
+    </div>
+    <div class="contact-cta-btns">
+      <a href="https://wa.me/38269621111" target="_blank" rel="noopener" class="cta-messenger cta-wa">
+        <img src="https://thb.tildacdn.com/tild6237-6666-4037-a363-386236386262/-/resize/40x/whatsapp.png" alt="WhatsApp" loading="lazy">
+        WhatsApp
+      </a>
+      <a href="https://t.me/RehabMontenegro" target="_blank" rel="noopener" class="cta-messenger cta-tg">
+        <img src="https://thb.tildacdn.com/tild3062-3034-4539-b463-313364613266/-/resize/40x/TG.png" alt="Telegram" loading="lazy">
+        Telegram
+      </a>
+      <a href="viber://chat?number=+38269621111" class="cta-messenger cta-vb">
+        <img src="https://thb.tildacdn.com/tild6161-6534-4930-b165-363338373665/-/resize/40x/pngwingcom.png" alt="Viber" loading="lazy">
+        Viber
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER SEO ══════════ -->
+<footer class="footer-seo">
+  <div class="footer-seo-grid">
+    <div class="footer-seo-col">
+      <h4>Rehabilitation program for alcoholics</h4>
+      <a href="/addiction_treatment">Treatment of addictions</a>
+      <a href="/chronic_alcoholism">Treatment of chronic alcoholism</a>
+      <a href="/conclusion_from_drinking">Treatment of binge alcoholism</a>
+      <a href="/secret_alcoholism">Treatment of secret alcoholism</a>
+      <a href="/beer_alcoholism">Treatment of beer alcoholism</a>
+      <a href="/female_alcoholism">Treatment of female alcoholism</a>
+      <a href="/household_alcoholism">Treatment of domestic alcoholism</a>
+      <a href="/permanent_alcoholism">Permanent alcoholism</a>
+    </div>
+    <div class="footer-seo-col">
+      <h4>Non-chemical addictions</h4>
+      <a href="/internet_addiction">Treatment of Internet addiction</a>
+      <a href="/gaming_addiction">Treatment of gaming addiction</a>
+      <a href="/gambling_addiction">Treatment of gambling addiction</a>
+      <a href="/sexual_obsession">Sexual, love addiction &mdash; sexaholism</a>
+      <a href="/shopaholism">Treatment of shopaholism</a>
+      <h4 style="margin-top:24px;">Eating disorders</h4>
+      <a href="/anorexia">Treatment of anorexia</a>
+      <a href="/bulimia">Treatment of bulimia</a>
+      <a href="/sugar_addiction">Treatment of addiction to sweets</a>
+      <a href="/energy_drink_addiction">Energy drink addiction</a>
+    </div>
+    <div class="footer-seo-col">
+      <h4>Rehabilitation for drug addicts</h4>
+      <a href="/heroin_addiction">Treatment of heroin addiction</a>
+      <a href="/codeine_addiction">Treatment of codeine addiction</a>
+      <a href="/methadone_addiction">Treatment of methadone addiction</a>
+      <a href="/cocaine_addiction">Treatment of cocaine addiction</a>
+      <a href="/substance_abuse">Treatment of substance abuse</a>
+      <a href="/marijuana_addiction">Treatment of marijuana addiction</a>
+      <a href="/spice_addiction">Treatment of spice addiction</a>
+      <a href="/drugs_addiction">Treatment of drug addiction</a>
+      <a href="/salt_addiction">Treatment of salt addiction</a>
+      <a href="/amphetamine_addiction">Treatment of amphetamine addiction</a>
+    </div>
+    <div class="footer-seo-col">
+      <h4>More</h4>
+      <a href="/narco_addiction">Drug addiction</a>
+      <a href="/clinic_drug_alcoholism">Clinic for drug addiction and alcoholism</a>
+      <a href="/drug_rehabilitation_center">Rehabilitation center for drug addicts</a>
+      <a href="/addiction_treatment_center">Drug Addiction Assistance Center</a>
+      <a href="/addiction_treatment_clinic">Addiction Treatment Clinic</a>
+      <a href="/ecstasy_addiction">Ecstasy Treatment</a>
+      <a href="/tramadol_addiction">Treatment for tramadol</a>
+      <a href="/hashish_addiction">Treatment of hashish addiction</a>
+      <a href="/lsd_addiction">Treatment of LSD addiction</a>
+      <a href="/opiate_addiction">Treatment for opiates</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-logo-sm">Monte<span>Rehab</span></span>
+    <span>&copy; All rights reserved</span>
+    <a href="/privacy">Privacy Policy</a>
+  </div>
+</footer>
+
+<!-- ══════════ MOBILE STICKY CTA ══════════ -->
+<div class="mobile-cta">
+  <a href="tel:+38269621111" class="mc-call">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+    Call now
+  </a>
+  <a href="#enquiry" class="mc-write">Write to us</a>
+</div>
+
+<!-- ══════════ JS ══════════ -->
+<script>
+/* Scroll reveal */
+const revEls = document.querySelectorAll('.reveal');
+new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.15 }).observe(revEls[0] || document.body);
+revEls.forEach(el => {
+  new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.15 }).observe(el);
+});
+
+/* Nav shadow on scroll */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if (window.scrollY > 60) {
+    nav.style.boxShadow = '0 4px 24px rgba(0,0,0,.08)';
+  } else {
+    nav.style.boxShadow = '0 1px 0 rgba(107,148,120,.12)';
+  }
+});
+
+/* Mobile hamburger */
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinks.style.display === 'flex';
+    navLinks.style.display = isOpen ? 'none' : 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'fixed';
+    navLinks.style.top = '62px';
+    navLinks.style.left = '0';
+    navLinks.style.right = '0';
+    navLinks.style.background = 'var(--mist)';
+    navLinks.style.padding = '20px';
+    navLinks.style.gap = '0';
+    navLinks.style.zIndex = '199';
+    navLinks.style.boxShadow = '0 8px 24px rgba(0,0,0,.1)';
+    if (isOpen) navLinks.removeAttribute('style');
+  });
+}
+</script>
+</body>
+</html>

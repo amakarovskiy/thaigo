@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Residential Addiction Treatment in Montenegro — MonteRehab</title>
+<meta name="description" content="Full-cycle residential rehabilitation programme. Daily 1-to-1 therapy, medical support, group classes. Private clinic in Montenegro.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://monterehab.com/residential_treatment">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Residential Addiction Treatment in Montenegro — MonteRehab">
+<meta property="og:description" content="Full-cycle residential rehabilitation programme. Daily 1-to-1 therapy, medical support, group classes. Private clinic in Montenegro.">
+<meta property="og:url" content="https://monterehab.com/residential_treatment">
+<meta property="og:image" content="https://images.unsplash.com/photo-1555990793-da11153b2473?w=1200&q=85&auto=format&fit=crop">
+<meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="en" href="https://monterehab.com/residential_treatment.html">
+<link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/residential_treatment.html">
+<link rel="alternate" hreflang="me" href="https://monterehab.com/me/stacionarno_leenje.html">
+<link rel="alternate" hreflang="x-default" href="https://monterehab.com/residential_treatment.html">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://thb.tildacdn.com">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236b9478'/><text x='16' y='24' text-anchor='middle' font-family='Georgia' font-size='22' font-weight='bold' fill='white'>M</text></svg>" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   TOKENS — identical to mockup-home.html
+══════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --sage:        #6b9478;
+  --sage-mid:    #7fa88c;
+  --sage-light:  #a3bfaa;
+  --sage-pale:   #eaf2ec;
+  --sage-xpale:  #f3f8f4;
+  --warm:        #c8a066;
+  --warm-light:  #f2e8d5;
+  --earth:       #6b5540;
+  --ink:         #1a2318;
+  --ink-mid:     #2d3d2f;
+  --mist:        #f8f6f2;
+  --white:       #ffffff;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', sans-serif;
+  --ease:  cubic-bezier(.25,.46,.45,.94);
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--mist); color: var(--ink); line-height: 1.7; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; }
+
+/* ══════════════════════════════════════
+   BUTTONS
+══════════════════════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--sans); font-size: .76rem;
+  letter-spacing: .14em; text-transform: uppercase;
+  padding: 14px 32px; cursor: pointer; border: none;
+  transition: all .28s var(--ease);
+}
+.btn-sage  { background: var(--sage);  color: #fff; }
+.btn-sage:hover  { background: var(--earth); transform: translateY(-1px); }
+.btn-earth { background: var(--earth); color: #fff; }
+.btn-earth:hover { background: var(--ink); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--sage); border: 1px solid var(--sage); }
+.btn-outline:hover { background: var(--sage); color: #fff; }
+
+/* ══════════════════════════════════════
+   NAV  (same as home mockup)
+══════════════════════════════════════ */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 76px; padding: 0 5vw;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(248,246,242,.96);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(107,148,120,.12);
+  transition: box-shadow .3s;
+}
+.nav-logo { font-family: var(--serif); font-size: 1.55rem; font-weight: 500; color: var(--ink); }
+.nav-logo span { color: var(--sage); }
+
+.nav-links { display: flex; gap: 4px; list-style: none; position: relative; min-width: 0; flex: 1; }
+.nav-links > li { position: relative; }
+.nav-links > li > a {
+  display: block; padding: 8px 14px;
+  font-size: .76rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink); opacity: .58; transition: opacity .2s;
+  white-space: nowrap;
+}
+.nav-links > li > a:hover,
+.nav-links > li.has-drop:hover > a { opacity: 1; }
+
+/* dropdown */
+.nav-drop {
+  position: absolute; top: calc(100% + 8px); left: 0;
+  background: var(--white); min-width: 240px;
+  box-shadow: 0 16px 48px rgba(0,0,0,.1);
+  border-top: 2px solid var(--sage);
+  opacity: 0; pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity .22s var(--ease), transform .22s var(--ease);
+  z-index: 100;
+}
+.nav-links > li.has-drop:hover .nav-drop {
+  opacity: 1; pointer-events: all; transform: translateY(0);
+}
+.nav-drop a {
+  display: block; padding: 11px 20px;
+  font-size: .78rem; color: var(--ink); opacity: .7;
+  border-bottom: 1px solid rgba(107,148,120,.08);
+  transition: background .15s, opacity .15s;
+}
+.nav-drop a:last-child { border-bottom: none; }
+.nav-drop a:hover { background: var(--sage-xpale); opacity: 1; }
+
+.nav-right { display: flex; align-items: center; gap: 24px; flex-shrink: 0; }
+.nav-phone { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; color: var(--sage); white-space: nowrap; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
+.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all .3s; }
+
+/* ══════════════════════════════════════
+   PAGE HERO  — compact, image on right
+══════════════════════════════════════ */
+.page-hero {
+  margin-top: 76px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 420px; overflow: hidden;
+}
+.page-hero-left {
+  background: var(--ink);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 72px 8vw 72px 8vw;
+  position: relative; overflow: hidden;
+}
+/* subtle radial glow */
+.page-hero-left::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,148,120,.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.breadcrumb {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.35); margin-bottom: 24px;
+}
+.breadcrumb a { color: rgba(255,255,255,.35); transition: color .2s; }
+.breadcrumb a:hover { color: var(--sage-light); }
+.breadcrumb .sep { opacity: .3; }
+.breadcrumb .current { color: var(--sage-light); }
+.page-hero-left h1 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  line-height: 1.1; color: var(--white); margin-bottom: 28px;
+}
+.page-hero-left h1 em { font-style: italic; color: var(--sage-light); }
+.page-hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+
+.page-hero-right { position: relative; overflow: hidden; }
+.page-hero-right img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 8s ease;
+}
+.page-hero-right:hover img { transform: scale(1.04); }
+/* dark overlay on right so it blends */
+.page-hero-right::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(26,35,24,.25) 0%, transparent 50%);
+}
+
+/* ══════════════════════════════════════
+   BREADCRUMB BAR (below hero on inner pages)
+══════════════════════════════════════ */
+.crumb-bar {
+  background: var(--sage-xpale);
+  padding: 13px 8vw;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  font-size: .74rem; color: var(--sage); letter-spacing: .06em;
+  border-bottom: 1px solid rgba(107,148,120,.1);
+}
+.crumb-bar a { color: var(--sage); transition: color .2s; }
+.crumb-bar a:hover { color: var(--earth); }
+.crumb-bar .sep { opacity: .4; }
+
+/* ══════════════════════════════════════
+   ARTICLE LAYOUT
+══════════════════════════════════════ */
+.article-wrap {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 72px;
+  padding: 80px 8vw;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── main content column ── */
+.article-body {}
+.article-body .lead-block {
+  border-left: 3px solid var(--sage);
+  padding-left: 28px; margin-bottom: 52px;
+}
+.article-body .lead-block p {
+  font-family: var(--serif); font-size: 1.28rem; font-weight: 300;
+  font-style: italic; line-height: 1.75; color: var(--ink-mid);
+}
+.article-body p {
+  font-size: .97rem; font-weight: 300; color: #4a5c50;
+  line-height: 1.9; margin-bottom: 20px;
+}
+.article-body h2 {
+  font-family: var(--serif); font-size: 1.9rem; font-weight: 400;
+  color: var(--ink); line-height: 1.2;
+  margin: 48px 0 18px;
+}
+.article-body h2 em { font-style: italic; color: var(--sage); }
+.article-body h3 {
+  font-family: var(--serif); font-size: 1.3rem; font-weight: 500;
+  color: var(--ink); margin: 36px 0 14px;
+}
+.article-body strong { color: var(--ink); font-weight: 500; }
+
+/* symptom / feature list */
+.feature-list { list-style: none; margin: 20px 0 32px; display: flex; flex-direction: column; gap: 10px; }
+.feature-list li {
+  display: flex; align-items: flex-start; gap: 14px;
+  font-size: .92rem; color: #4a5c50; font-weight: 300; line-height: 1.6;
+}
+.fl-dot {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--sage-pale); flex-shrink: 0; margin-top: 1px;
+  display: flex; align-items: center; justify-content: center;
+}
+.fl-dot::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--sage); }
+
+/* pull quote */
+.pull-quote {
+  background: var(--ink); padding: 40px 44px; margin: 48px 0;
+  position: relative; overflow: hidden;
+}
+.pull-quote::before {
+  content: '"'; font-family: var(--serif); font-size: 8rem;
+  color: var(--sage); opacity: .2;
+  position: absolute; top: -20px; left: 24px; line-height: 1;
+}
+.pull-quote p {
+  font-family: var(--serif); font-size: 1.3rem; font-weight: 300;
+  font-style: italic; color: rgba(255,255,255,.85); line-height: 1.7;
+  position: relative; z-index: 1; margin: 0;
+}
+
+/* info box */
+.info-box {
+  background: var(--sage-xpale); border-left: 3px solid var(--sage);
+  padding: 28px 32px; margin: 36px 0;
+}
+.info-box h4 {
+  font-family: var(--serif); font-size: 1.05rem; font-weight: 500;
+  color: var(--ink); margin-bottom: 10px;
+}
+.info-box p { font-size: .88rem; color: #4a5c50; font-weight: 300; line-height: 1.75; margin: 0; }
+
+/* article CTA block */
+.article-cta {
+  background: var(--sage); padding: 40px 44px; margin: 56px 0 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  flex-wrap: wrap;
+}
+.article-cta p {
+  font-family: var(--serif); font-size: 1.3rem; font-weight: 300;
+  color: #fff; line-height: 1.4; margin: 0; max-width: 420px;
+}
+.article-cta p em { font-style: italic; }
+
+/* ── sidebar ── */
+.article-sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+.sidebar-card {
+  background: var(--white); padding: 28px 26px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.04);
+}
+.sidebar-card h4 {
+  font-size: .66rem; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(107,148,120,.7); margin-bottom: 16px;
+}
+.sidebar-card .s-phone {
+  font-family: var(--serif); font-size: 1.45rem; font-weight: 300;
+  color: var(--sage); display: block; margin-bottom: 6px;
+}
+.sidebar-card .s-note {
+  font-size: .74rem; color: #8a9e90; letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.sidebar-card .s-email {
+  font-size: .88rem; color: var(--ink); opacity: .6; margin-top: 10px; display: block;
+}
+
+/* messengers */
+.messenger-links { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.messenger-link {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 14px; background: var(--sage-xpale);
+  font-size: .82rem; color: var(--ink); transition: background .2s;
+}
+.messenger-link:hover { background: var(--sage-pale); }
+.messenger-link img { width: 20px; height: 20px; object-fit: contain; }
+
+/* related services */
+.related-links { display: flex; flex-direction: column; gap: 2px; }
+.related-link {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px; background: var(--sage-xpale);
+  font-size: .84rem; color: var(--ink); transition: background .2s, color .2s;
+}
+.related-link:hover { background: var(--sage); color: #fff; }
+.related-link .rl-arrow { font-size: .8rem; opacity: .4; transition: opacity .2s, transform .2s; }
+.related-link:hover .rl-arrow { opacity: 1; transform: translateX(3px); }
+
+/* pricing teaser */
+.pricing-teaser { background: var(--warm-light); padding: 28px; }
+.pricing-teaser h4 { font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: var(--earth); margin-bottom: 18px; }
+.pt-item { padding: 14px 0; border-bottom: 1px solid rgba(107,85,64,.12); }
+.pt-item:last-child { border-bottom: none; padding-bottom: 0; }
+.pt-name { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--earth); opacity: .7; margin-bottom: 4px; }
+.pt-price { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; color: var(--earth); }
+.pt-cta { margin-top: 20px; width: 100%; text-align: center; }
+
+/* ══════════════════════════════════════
+   CONTACT FORM
+══════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════
+   FOOTER SEO
+══════════════════════════════════════ */
+.footer-seo {
+  background: var(--ink-mid); padding: 60px 8vw 36px;
+}
+.footer-seo-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 32px;
+  margin-bottom: 44px;
+}
+.footer-seo-col h4 {
+  font-size: .62rem; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(255,255,255,.25); margin-bottom: 16px; padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.footer-seo-col a {
+  display: block; font-size: .8rem; color: rgba(255,255,255,.4);
+  margin-bottom: 8px; transition: color .2s; line-height: 1.4;
+}
+.footer-seo-col a:hover { color: var(--sage-light); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.06); padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: .72rem; color: rgba(255,255,255,.25); flex-wrap: wrap; gap: 10px;
+}
+.footer-bottom a { color: rgba(255,255,255,.25); transition: color .2s; }
+.footer-bottom a:hover { color: var(--sage-light); }
+.footer-logo-sm { font-family: var(--serif); font-size: 1.1rem; color: rgba(255,255,255,.4); }
+.footer-logo-sm span { color: var(--sage-light); }
+
+/* ══════════════════════════════════════
+   MOBILE STICKY CTA
+══════════════════════════════════════ */
+.mobile-cta {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 300;
+  background: var(--ink); padding: 12px 16px;
+  flex-direction: row; gap: 8px;
+  box-shadow: 0 -4px 24px rgba(0,0,0,.25);
+  border-top: 1px solid rgba(107,148,120,.2);
+}
+.mc-call {
+  flex: 1; background: var(--sage); color: var(--white); border: none;
+  padding: 13px; font-family: var(--sans); font-size: .74rem;
+  letter-spacing: .12em; text-transform: uppercase; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.mc-write {
+  flex: 1; background: rgba(255,255,255,.07); color: rgba(255,255,255,.75);
+  border: 1px solid rgba(255,255,255,.12); padding: 13px;
+  font-family: var(--sans); font-size: .74rem; letter-spacing: .12em;
+  text-transform: uppercase; cursor: pointer; text-align: center; display: flex;
+  align-items: center; justify-content: center;
+}
+
+/* ══════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════ */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: none; }
+.rv1 { transition-delay: .1s; }
+.rv2 { transition-delay: .2s; }
+.rv3 { transition-delay: .3s; }
+
+/* ══════════════════════════════════════
+   HERO ENTRANCE ANIMATION
+══════════════════════════════════════ */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+.breadcrumb  { animation: fadeUp .6s .1s both; }
+.page-hero-left h1   { animation: fadeUp .7s .2s both; }
+.page-hero-cta       { animation: fadeUp .7s .35s both; }
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+
+.contact-cta { background: var(--ink); padding: 80px 8vw; }
+.contact-cta-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.contact-cta-text h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+.contact-cta-text h2 em { font-style: italic; color: var(--sage-light); }
+.contact-cta-text p { font-size: .92rem; color: rgba(255,255,255,.55); font-weight: 300; line-height: 1.8; margin-bottom: 20px; }
+.cta-phone { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; color: var(--white); }
+.contact-cta-btns { display: flex; flex-direction: column; gap: 14px; }
+.cta-messenger { display: flex; align-items: center; gap: 14px; padding: 16px 24px; background: rgba(255,255,255,.07); color: var(--white); font-size: .88rem; font-weight: 400; letter-spacing: .04em; border: 1px solid rgba(255,255,255,.12); transition: background .2s, border-color .2s; }
+.cta-messenger:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.25); }
+.cta-messenger img { width: 24px; height: 24px; object-fit: contain; }
+
+@media (max-width: 1100px) {
+  #nav { padding: 0 4vw; }
+  .article-wrap { grid-template-columns: 1fr 300px; gap: 48px; padding: 64px 5vw; }
+  .footer-seo-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .contact-cta-inner { gap: 48px; }
+}
+
+@media (max-width: 768px) {
+  /* Nav */
+  #nav { padding: 0 20px; height: 62px; }
+  .nav-links, .nav-right .btn { display: none; }
+  .nav-phone { font-size: .9rem; }
+  .hamburger { display: flex; }
+
+  /* Hero */
+  .page-hero { grid-template-columns: 1fr; min-height: auto; }
+  .page-hero-left { padding: 48px 20px 56px; }
+  .page-hero-left h1 { font-size: 2.4rem; }
+  .page-hero-right { height: 240px; position: relative; }
+  .page-hero-right img { position: absolute; }
+
+  /* Article */
+  .article-wrap { grid-template-columns: 1fr; gap: 48px; padding: 48px 20px; }
+  .article-sidebar { order: -1; }
+
+  /* Form */
+    
+  /* Footer */
+  .footer-seo { padding: 48px 20px 28px; }
+  .footer-seo-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  /* Contact CTA */
+  .contact-cta { padding: 56px 20px; }
+  .contact-cta-inner { grid-template-columns: 1fr; gap: 40px; }
+
+  /* Sticky CTA */
+      .mobile-cta { display: flex; }
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://monterehab.com"},{"@type":"ListItem","position":2,"name":"Eating Disorders","item":"https://monterehab.com/eating-disorders"},{"@type":"ListItem","position":3,"name":"Residential treatment","item":"https://monterehab.com/residential_treatment"}]}
+</script>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Monte<span>Rehab</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-drop">
+      <a href="#">Eating Disorders ▾</a>
+      <div class="nav-drop">
+        <a href="residential_treatment.html">Residential treatment</a>
+        <a href="group_therapy.html">Group therapy online</a>
+      </div>
+    </li>
+    <li class="has-drop">
+      <a href="#">Addiction ▾</a>
+      <div class="nav-drop">
+        <a href="alcohol_addiction.html">Alcohol addiction</a>
+        <a href="drug_addiction.html">Drug addiction</a>
+        <a href="medical_detox.html">Medical detox</a>
+        <a href="behavioural_addiction_treatment.html">Behavioural addiction treatment</a>
+        <a href="dual_diagnosis.html">Dual diagnosis</a>
+      </div>
+    </li>
+    <li class="has-drop">
+      <a href="#">Mental Health ▾</a>
+      <div class="nav-drop">
+        <a href="anxiety_treatment.html">Anxiety treatment</a>
+        <a href="depression_treatment.html">Depression treatment</a>
+        <a href="executive_burnout.html">Executive burnout</a>
+        <a href="insomnia_treatment.html">Insomnia treatment</a>
+        <a href="mood_disorder_treatment.html">Mood disorder treatment</a>
+        <a href="ptsd_and_trauma_treatment.html">PTSD and trauma treatment</a>
+      </div>
+    </li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="contacts.html">Contact us</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switch" style="font-size:.72rem;letter-spacing:.1em;"><strong style="color:var(--sage)">EN</strong> | <a href="ru/residential_treatment.html" style="color:var(--ink);opacity:.45;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.45'" onclick="localStorage.setItem('mr_lang','ru')">RU</a> | <a href="me/stacionarno_leenje.html" style="color:var(--ink);opacity:.45;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.45'" onclick="localStorage.setItem('mr_lang','me')">ME</a></div>
+    <a href="tel:+38269621111" class="nav-phone">+382 69 621 111</a>
+    <a href="contacts.html" class="btn btn-sage">Get in touch</a>
+  </div>
+  <button class="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══════════ PAGE HERO ══════════ -->
+<div class="page-hero">
+  <div class="page-hero-left">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">→</span>
+      <a href="#">Eating disorders</a>
+      <span class="sep">→</span>
+      <span class="current">Residential treatment</span>
+    </div>
+    <h1>Residential<br><em>treatment</em></h1>
+    <div class="page-hero-cta">
+      <a href="#enquiry" class="btn btn-sage">Sign Up now</a>
+      <a href="tel:+38269621111" class="btn btn-outline">+382 69 621 111</a>
+    </div>
+  </div>
+  <div class="page-hero-right">
+    <img
+      src="https://thb.tildacdn.com/tild6231-3738-4265-b133-336336636661/-/resize/800x/-.jpg"
+      alt="Residential treatment"
+      loading="lazy">
+  </div>
+</div>
+
+<!-- ══════════ ARTICLE ══════════ -->
+<div class="article-wrap">
+
+  <!-- ── MAIN CONTENT ── -->
+  <article class="article-body">
+
+    <!-- Lead paragraph -->
+    <div class="lead-block reveal">
+      <p>You will be under the supervision of our team of professional and caring therapists in this full-cycle program.</p>
+    </div>
+
+    <p class="reveal rv1">We offer an extremely rich psychotherapy program comparable to 3 years of ordinary supportive psychotherapy. The goal of treating any behavioral disorder is to change behavior patterns.</p>
+
+    <p class="reveal rv2">Principles of the brain suggest that new patterns are most effectively developed when we find ourselves in a radically new environment, so our residential program is specially designed in a way you would feel comfortable to absorb everything we will be teaching you.</p>
+
+    <!-- Article CTA -->
+    <div class="article-cta reveal">
+      <p>Ready to take the first step toward a <em>free life?</em></p>
+      <a href="#enquiry" class="btn btn-white" style="background:#fff;color:var(--sage);flex-shrink:0;">Sign Up now</a>
+    </div>
+
+  </article>
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="article-sidebar">
+
+    <!-- Contact card -->
+    <div class="sidebar-card reveal">
+      <h4>Reach us anytime</h4>
+      <a href="tel:+38269621111" class="s-phone">+382 69 621 111</a>
+      <div class="s-note">Available 24 hours a day</div>
+      <a href="mailto:montenegrorehab@gmail.com" class="s-email">montenegrorehab@gmail.com</a>
+      <div class="messenger-links">
+        <a href="https://wa.me/38269621111" class="messenger-link">
+          <img src="https://thb.tildacdn.com/tild6237-6666-4037-a363-386236386262/-/resize/40x/whatsapp.png" alt="WhatsApp" loading="lazy">
+          WhatsApp
+        </a>
+        <a href="https://t.me/+38269621111" class="messenger-link">
+          <img src="https://thb.tildacdn.com/tild3062-3034-4539-b463-313364613266/-/resize/40x/TG.png" alt="Telegram" loading="lazy">
+          Telegram
+        </a>
+        <a href="viber://chat?number=+38269621111" class="messenger-link">
+          <img src="https://thb.tildacdn.com/tild6161-6534-4930-b165-363338373665/-/resize/40x/pngwingcom.png" alt="Viber" loading="lazy">
+          Viber
+        </a>
+      </div>
+    </div>
+
+    <!-- Related services -->
+    <div class="sidebar-card reveal rv1">
+      <h4>Related services</h4>
+      <div class="related-links">
+        <a href="group_therapy.html" class="related-link">Group therapy online <span class="rl-arrow">→</span></a>
+        <a href="alcohol_addiction.html" class="related-link">Alcohol addiction <span class="rl-arrow">→</span></a>
+        <a href="drug_addiction.html" class="related-link">Drug addiction <span class="rl-arrow">→</span></a>
+        <a href="medical_detox.html" class="related-link">Medical detox <span class="rl-arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- Pricing teaser -->
+    <div class="pricing-teaser reveal rv2">
+      <h4>Programme costs</h4>
+      <div class="pt-item">
+        <div class="pt-name">Eurostandard (shared)</div>
+        <div class="pt-price">from €6,000 / mo</div>
+      </div>
+      <div class="pt-item">
+        <div class="pt-name">Eurostandard (single)</div>
+        <div class="pt-price">from €9,000 / mo</div>
+      </div>
+      <div class="pt-item">
+        <div class="pt-name">Intensive programme</div>
+        <div class="pt-price">from €12,000 / mo</div>
+      </div>
+      <a href="pricing.html" class="btn btn-earth pt-cta">View all pricing</a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ══════════ CONTACT FORM ══════════ -->
+<section class="contact-cta" id="enquiry">
+  <div class="contact-cta-inner">
+    <div class="contact-cta-text">
+      <h2>Ready to start your <em>recovery journey?</em></h2>
+      <p>Reach out to us — we are available 24/7 and will respond immediately.</p>
+      <div class="cta-phone">+382 69 621 111</div>
+    </div>
+    <div class="contact-cta-btns">
+      <a href="https://wa.me/38269621111" target="_blank" rel="noopener" class="cta-messenger cta-wa">
+        <img src="https://thb.tildacdn.com/tild6237-6666-4037-a363-386236386262/-/resize/40x/whatsapp.png" alt="WhatsApp" loading="lazy">
+        WhatsApp
+      </a>
+      <a href="https://t.me/RehabMontenegro" target="_blank" rel="noopener" class="cta-messenger cta-tg">
+        <img src="https://thb.tildacdn.com/tild3062-3034-4539-b463-313364613266/-/resize/40x/TG.png" alt="Telegram" loading="lazy">
+        Telegram
+      </a>
+      <a href="viber://chat?number=+38269621111" class="cta-messenger cta-vb">
+        <img src="https://thb.tildacdn.com/tild6161-6534-4930-b165-363338373665/-/resize/40x/pngwingcom.png" alt="Viber" loading="lazy">
+        Viber
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER SEO ══════════ -->
+<footer class="footer-seo">
+  <div class="footer-seo-grid">
+    <div class="footer-seo-col">
+      <h4>Rehabilitation program for alcoholics</h4>
+      <a href="/addiction_treatment">Treatment of addictions</a>
+      <a href="/chronic_alcoholism">Treatment of chronic alcoholism</a>
+      <a href="/conclusion_from_drinking">Treatment of binge alcoholism</a>
+      <a href="/secret_alcoholism">Treatment of secret alcoholism</a>
+      <a href="/beer_alcoholism">Treatment of beer alcoholism</a>
+      <a href="/female_alcoholism">Treatment of female alcoholism</a>
+      <a href="/household_alcoholism">Treatment of domestic alcoholism</a>
+      <a href="/permanent_alcoholism">Permanent alcoholism</a>
+    </div>
+    <div class="footer-seo-col">
+      <h4>Non-chemical addictions</h4>
+      <a href="/internet_addiction">Treatment of Internet addiction</a>
+      <a href="/gaming_addiction">Treatment of gaming addiction</a>
+      <a href="/gambling_addiction">Treatment of gambling addiction</a>
+      <a href="/sexual_obsession">Sexual, love addiction — sexaholism</a>
+      <a href="/shopaholism">Treatment of shopaholism</a>
+      <h4 style="margin-top:24px;">Eating disorders</h4>
+      <a href="/anorexia">Treatment of anorexia</a>
+      <a href="/bulimia">Treatment of bulimia</a>
+      <a href="/sugar_addiction">Treatment of addiction to sweets</a>
+      <a href="/energy_drink_addiction">Energy drink addiction</a>
+    </div>
+    <div class="footer-seo-col">
+      <h4>Rehabilitation for drug addicts</h4>
+      <a href="/heroin_addiction">Treatment of heroin addiction</a>
+      <a href="/codeine_addiction">Treatment of codeine addiction</a>
+      <a href="/methadone_addiction">Treatment of methadone addiction</a>
+      <a href="/cocaine_addiction">Treatment of cocaine addiction</a>
+      <a href="/substance_abuse">Treatment of substance abuse</a>
+      <a href="/marijuana_addiction">Treatment of marijuana addiction</a>
+      <a href="/spice_addiction">Treatment of spice addiction</a>
+      <a href="/drugs_addiction">Treatment of drug addiction</a>
+      <a href="/salt_addiction">Treatment of salt addiction</a>
+      <a href="/amphetamine_addiction">Treatment of amphetamine addiction</a>
+    </div>
+    <div class="footer-seo-col">
+      <h4>More</h4>
+      <a href="/narco_addiction">Drug addiction</a>
+      <a href="/clinic_drug_alcoholism">Clinic for drug addiction and alcoholism</a>
+      <a href="/drug_rehabilitation_center">Rehabilitation center for drug addicts</a>
+      <a href="/addiction_treatment_center">Drug Addiction Assistance Center</a>
+      <a href="/addiction_treatment_clinic">Addiction Treatment Clinic</a>
+      <a href="/ecstasy_addiction">Ecstasy Treatment</a>
+      <a href="/tramadol_addiction">Treatment for tramadol</a>
+      <a href="/hashish_addiction">Treatment of hashish addiction</a>
+      <a href="/lsd_addiction">Treatment of LSD addiction</a>
+      <a href="/opiate_addiction">Treatment for opiates</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-logo-sm">Monte<span>Rehab</span></span>
+    <span>© All rights reserved</span>
+    <a href="/privacy">Privacy Policy</a>
+  </div>
+</footer>
+
+<!-- ══════════ MOBILE STICKY CTA ══════════ -->
+<div class="mobile-cta">
+  <a href="tel:+38269621111" class="mc-call">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+    Call now
+  </a>
+  <a href="#enquiry" class="mc-write">Write to us</a>
+</div>
+
+<!-- ══════════ JS ══════════ -->
+<script>
+/* Scroll reveal */
+const revEls = document.querySelectorAll('.reveal');
+new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.15 }).observe(revEls[0]);
+revEls.forEach(el => {
+  new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.15 }).observe(el);
+});
+
+/* Nav shadow on scroll */
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.boxShadow = window.scrollY > 60
+    ? '0 4px 24px rgba(0,0,0,.08)' : '0 1px 0 rgba(107,148,120,.12)';
+});
+
+/* Hamburger toggle */
+document.querySelector('.hamburger').addEventListener('click', function() {
+  const links = document.querySelector('.nav-links');
+  links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+});
+</script>
+</body>
+</html>
