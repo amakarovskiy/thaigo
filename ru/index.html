@@ -110,6 +110,7 @@ h2.display em { font-style: italic; color: var(--sage); }
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   height: 76px; padding: 0 5vw;
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  background: linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 100%);
   transition: background .4s, box-shadow .4s;
 }
 #nav.scrolled {
@@ -118,18 +119,28 @@ h2.display em { font-style: italic; color: var(--sage); }
   box-shadow: 0 1px 0 rgba(107,148,120,.12);
 }
 .nav-logo {
-  font-family: var(--serif); font-size: 1.55rem; font-weight: 500; color: var(--ink);
+  font-family: var(--serif); font-size: 1.55rem; font-weight: 500; color: #fff;
   transition: color .3s;
 }
-.nav-logo span { color: var(--sage); }
+#nav.scrolled .nav-logo { color: var(--ink); }
+.nav-logo span { color: var(--sage-light); }
+#nav.scrolled .nav-logo span { color: var(--sage); }
 .nav-links { display: flex; gap: 4px; list-style: none; position: relative; min-width: 0; flex: 1; justify-content: center; }
 .nav-links > li { position: relative; }
 .nav-links > li > a {
   display: block; padding: 8px 14px;
   font-size: .76rem; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--ink); opacity: .55; transition: opacity .2s;
+  color: var(--ink); opacity: .55; transition: opacity .2s, color .3s;
   white-space: nowrap;
 }
+/* White nav text over hero */
+#nav:not(.scrolled) .nav-links > li > a,
+#nav:not(.scrolled) .lang-switch a,
+#nav:not(.scrolled) .lang-switch span,
+#nav:not(.scrolled) .lang-switch strong { color: #fff !important; }
+#nav:not(.scrolled) .nav-phone { color: #fff !important; }
+#nav:not(.scrolled) .hamburger span { background: #fff; }
+#nav:not(.scrolled) .btn-sage { background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.5); color: #fff; }
 .nav-links > li > a:hover,
 .nav-links > li.has-drop:hover > a { opacity: 1; }
 
