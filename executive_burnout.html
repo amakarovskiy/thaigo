@@ -63,7 +63,7 @@ a { text-decoration: none; }
 #nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   height: 76px; padding: 0 5vw;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
   background: rgba(248,246,242,.96);
   backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 rgba(107,148,120,.12);
@@ -71,7 +71,7 @@ a { text-decoration: none; }
 }
 .nav-logo { font-family: var(--serif); font-size: 1.55rem; font-weight: 500; color: var(--ink); }
 .nav-logo span { color: var(--sage); }
-.nav-links { display: flex; gap: 4px; list-style: none; position: relative; min-width: 0; flex: 1; }
+.nav-links { display: flex; gap: 4px; list-style: none; position: relative; min-width: 0; flex: 1; justify-content: center; }
 .nav-links > li { position: relative; }
 .nav-links > li > a {
   display: block; padding: 8px 14px;
