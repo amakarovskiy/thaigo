@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monte Rehab — Rehabilitation Center, Montenegro</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236b9478'/><text x='16' y='24' text-anchor='middle' font-family='Georgia' font-size='22' font-weight='bold' fill='white'>M</text></svg>" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --sage:        #6b9478;
+  --sage-mid:    #7fa88c;
+  --sage-light:  #a3bfaa;
+  --sage-pale:   #eaf2ec;
+  --sage-xpale:  #f3f8f4;
+  --warm:        #c8a066;
+  --warm-light:  #f2e8d5;
+  --earth:       #6b5540;
+  --earth-dark:  #4a3b2c;
+  --ink:         #1a2318;
+  --ink-mid:     #2d3d2f;
+  --mist:        #f8f6f2;
+  --white:       #ffffff;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', sans-serif;
+  --ease: cubic-bezier(.25,.46,.45,.94);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans); background: var(--mist);
+  color: var(--ink); line-height: 1.7; overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; }
+
+/* ═══════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════ */
+.eyebrow {
+  font-size: .68rem; letter-spacing: .32em; text-transform: uppercase;
+  color: var(--sage); display: flex; align-items: center; gap: 14px;
+}
+.eyebrow::before { content: ''; width: 32px; height: 1px; background: currentColor; flex-shrink: 0; }
+h2.display {
+  font-family: var(--serif); font-weight: 300; line-height: 1.1;
+  font-size: clamp(2rem, 4.2vw, 3.4rem); color: var(--ink);
+}
+h2.display em { font-style: italic; color: var(--sage); }
+.body-lead {
+  font-size: 1.02rem; font-weight: 300; color: #506058; line-height: 1.9;
+}
+
+/* ═══════════════════════════════════
+   BUTTONS
+═══════════════════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--sans); font-size: .76rem;
+  letter-spacing: .14em; text-transform: uppercase;
+  padding: 14px 30px; cursor: pointer; border: none;
+  transition: all .28s var(--ease); position: relative; overflow: hidden;
+}
+.btn::after {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(255,255,255,.12); opacity: 0; transition: opacity .2s;
+}
+.btn:hover::after { opacity: 1; }
+.btn-sage { background: var(--sage); color: #fff; }
+.btn-sage:hover { background: var(--earth); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--sage); border: 1px solid var(--sage); }
+.btn-outline:hover { background: var(--sage); color: #fff; }
+.btn-white { background: #fff; color: var(--sage); }
+.btn-white:hover { background: var(--ink); color: #fff; }
+.btn-earth { background: var(--earth); color: #fff; }
+.btn-earth:hover { background: var(--ink); transform: translateY(-1px); }
+
+/* ═══════════════════════════════════
+   NOISE TEXTURE OVERLAY
+═══════════════════════════════════ */
+.noise::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: .6;
+}
+
+/* ═══════════════════════════════════
+   NAV
+═══════════════════════════════════ */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 76px; padding: 0 5vw;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background .4s, box-shadow .4s;
+}
+#nav.scrolled {
+  background: rgba(248,246,242,.96);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(107,148,120,.12);
+}
+.nav-logo {
+  font-family: var(--serif); font-size: 1.55rem; font-weight: 500; color: var(--ink);
+  transition: color .3s;
+}
+.nav-logo span { color: var(--sage); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-size: .76rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink); opacity: .55; transition: opacity .2s;
+}
+.nav-links a:hover { opacity: 1; }
+.nav-right { display: flex; align-items: center; gap: 24px; flex-shrink: 0; }
+.nav-phone {
+  font-family: var(--serif); font-size: 1.1rem; font-weight: 500;
+  color: var(--sage); letter-spacing: .02em;
+}
+.hamburger {
+  display: none; flex-direction: column; gap: 5px; cursor: pointer;
+  padding: 6px; background: none; border: none;
+}
+.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all .3s; }
+
+/* ═══════════════════════════════════
+   HERO
+═══════════════════════════════════ */
+.hero {
+  position: relative; min-height: 100svh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  overflow: hidden; padding-top: 76px;
+}
+.hero-left {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 60px 80px 8vw;
+  background: var(--mist);
+}
+.hero-left .eyebrow { margin-bottom: 28px; }
+.hero-left h1 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(3rem, 5.5vw, 5.2rem);
+  line-height: 1.05; color: var(--ink); margin-bottom: 28px;
+}
+.hero-left h1 em { font-style: italic; color: var(--sage); }
+.hero-left .hero-sub {
+  font-size: 1.05rem; font-weight: 300; color: #4e6054;
+  max-width: 420px; line-height: 1.9; margin-bottom: 44px;
+}
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-note {
+  margin-top: 28px; font-size: .76rem; color: #849980;
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-note::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--sage-light); flex-shrink: 0;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(.7); }
+}
+.hero-right {
+  position: relative; overflow: hidden;
+}
+.hero-right img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .1s linear;
+}
+.hero-right::after {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 80px;
+  background: linear-gradient(90deg, var(--mist), transparent);
+  z-index: 2;
+}
+.hero-scroll {
+  position: absolute; bottom: 36px; right: 5vw; z-index: 3;
+  writing-mode: vertical-rl; font-size: .66rem; letter-spacing: .22em;
+  text-transform: uppercase; color: rgba(255,255,255,.55);
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-scroll::after {
+  content: ''; width: 1px; height: 48px;
+  background: linear-gradient(rgba(255,255,255,.4), transparent);
+  animation: scrollLine 1.8s ease-in-out infinite;
+}
+@keyframes scrollLine { 0%,100%{opacity:.3;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(.5)translateY(-20px)} }
+
+/* ═══════════════════════════════════
+   TRUST BAR
+═══════════════════════════════════ */
+.trust-bar {
+  background: var(--ink-mid); padding: 0 8vw;
+  display: flex; align-items: stretch;
+  overflow: hidden;
+}
+.trust-item {
+  flex: 1; padding: 32px 24px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; color: #fff; border-right: 1px solid rgba(255,255,255,.07);
+  transition: background .25s;
+}
+.trust-item:last-child { border-right: none; }
+.trust-item:hover { background: rgba(255,255,255,.04); }
+.trust-num {
+  font-family: var(--serif); font-size: 2.6rem; font-weight: 300;
+  color: var(--sage-light); line-height: 1; transition: color .25s;
+}
+.trust-item:hover .trust-num { color: #fff; }
+.trust-label { font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; opacity: .45; }
+
+/* ═══════════════════════════════════
+   LOCATION STRIP
+═══════════════════════════════════ */
+.loc-strip {
+  background: var(--sage-xpale); padding: 14px 8vw;
+  display: flex; align-items: center; gap: 12px;
+  font-size: .76rem; color: var(--sage);
+  border-bottom: 1px solid rgba(107,148,120,.12);
+}
+.loc-strip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
+.loc-strip span { color: var(--ink); opacity: .45; margin: 0 4px; }
+
+/* ═══════════════════════════════════
+   SECTION SCAFFOLDING
+═══════════════════════════════════ */
+.section { padding: 104px 8vw; }
+.section-sm { padding: 72px 8vw; }
+
+/* ═══════════════════════════════════
+   ABOUT
+═══════════════════════════════════ */
+.about { background: var(--white); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 96px; align-items: center; margin-top: 0;
+}
+.about-visual { position: relative; }
+.about-main-img {
+  width: 100%; height: 560px; object-fit: cover;
+  filter: brightness(.97) saturate(1.08);
+}
+.about-inset {
+  position: absolute; bottom: -32px; right: -32px;
+  width: 220px; height: 180px; object-fit: cover;
+  border: 6px solid var(--white);
+  box-shadow: 0 20px 60px rgba(0,0,0,.15);
+}
+.about-badge {
+  position: absolute; top: 32px; left: -32px;
+  background: var(--sage); color: #fff;
+  padding: 24px 28px; z-index: 2;
+  box-shadow: 0 12px 40px rgba(107,148,120,.3);
+}
+.about-badge strong { font-family: var(--serif); font-size: 2.6rem; font-weight: 300; display: block; line-height: 1; }
+.about-badge span { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; opacity: .8; }
+.about-text { padding-bottom: 32px; }
+.about-text .eyebrow { margin-bottom: 18px; }
+.about-text h2 { margin-bottom: 24px; }
+.about-text p { font-weight: 300; color: #4e6054; line-height: 1.9; margin-bottom: 18px; }
+.pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 36px; }
+.pillar {
+  padding: 20px; border-left: 2px solid var(--sage-light);
+  background: var(--sage-xpale);
+  transition: border-color .2s, background .2s;
+}
+.pillar:hover { border-color: var(--sage); background: var(--sage-pale); }
+.pillar-title { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); margin-bottom: 7px; }
+.pillar p { font-size: .84rem; color: #667a6c; font-weight: 300; line-height: 1.6; }
+
+/* ═══════════════════════════════════
+   GALLERY STRIP
+═══════════════════════════════════ */
+.gallery-strip {
+  display: grid; grid-template-columns: 2fr 1.2fr 1.2fr 1fr 1fr;
+  height: 340px; gap: 3px; overflow: hidden;
+}
+.gs-item { overflow: hidden; position: relative; cursor: pointer; }
+.gs-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.gs-item:hover img { transform: scale(1.08); }
+.gs-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(26,35,24,.5), transparent 55%);
+  opacity: 0; transition: opacity .3s;
+}
+.gs-item:hover .gs-overlay { opacity: 1; }
+
+/* ═══════════════════════════════════
+   PROGRAMS
+═══════════════════════════════════ */
+.programs { background: var(--sage-xpale); }
+.programs-header {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: end; margin-bottom: 56px;
+}
+.programs-header .eyebrow { margin-bottom: 16px; }
+.programs-header p { font-size: .96rem; font-weight: 300; color: #4e6054; line-height: 1.85; }
+.programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+.prog-card {
+  background: var(--white); overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform .3s var(--ease);
+  cursor: pointer; position: relative;
+}
+.prog-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,.1); }
+.prog-img-wrap { position: relative; overflow: hidden; height: 200px; flex-shrink: 0; }
+.prog-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.prog-card:hover .prog-img-wrap img { transform: scale(1.06); }
+.prog-tag {
+  position: absolute; top: 16px; left: 16px;
+  background: var(--sage); color: #fff;
+  font-size: .62rem; letter-spacing: .14em; text-transform: uppercase;
+  padding: 5px 12px; z-index: 2;
+}
+.prog-body { padding: 28px 28px 32px; flex: 1; display: flex; flex-direction: column; }
+.prog-body h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; color: var(--ink); margin-bottom: 10px; }
+.prog-body p { font-size: .84rem; color: #667a6c; font-weight: 300; line-height: 1.75; flex: 1; }
+.prog-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 20px; font-size: .72rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--sage);
+}
+.prog-link svg { transition: transform .2s; }
+.prog-card:hover .prog-link svg { transform: translateX(5px); }
+
+/* ═══════════════════════════════════
+   PROCESS
+═══════════════════════════════════ */
+.process { background: var(--white); }
+.process-header { max-width: 560px; margin-bottom: 80px; }
+.process-header .eyebrow { margin-bottom: 16px; }
+.process-steps {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  position: relative;
+}
+.process-line {
+  position: absolute; top: 36px; left: calc(12.5% + 12px); right: calc(12.5% + 12px);
+  height: 1px; background: linear-gradient(90deg, transparent, var(--sage-light) 15%, var(--sage-light) 85%, transparent);
+}
+.proc-step { padding: 0 28px; text-align: center; position: relative; }
+.proc-num {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--white); border: 1.5px solid var(--sage-light);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 1.6rem; color: var(--sage);
+  margin: 0 auto 28px; z-index: 2; position: relative;
+  transition: all .3s var(--ease);
+}
+.proc-step:hover .proc-num {
+  background: var(--sage); color: #fff;
+  border-color: var(--sage);
+  box-shadow: 0 8px 30px rgba(107,148,120,.35);
+  transform: scale(1.1);
+}
+.proc-step h4 { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
+.proc-step p { font-size: .84rem; color: #667a6c; font-weight: 300; line-height: 1.7; }
+
+/* ═══════════════════════════════════
+   TEAM
+═══════════════════════════════════ */
+.team { background: var(--sage-xpale); }
+.team-header { max-width: 480px; margin-bottom: 56px; }
+.team-header .eyebrow { margin-bottom: 16px; }
+.team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+.team-card {
+  background: var(--white); overflow: hidden;
+  transition: transform .3s var(--ease), box-shadow .3s;
+}
+.team-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,.09); }
+.team-img-wrap { position: relative; overflow: hidden; height: 300px; }
+.team-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .5s var(--ease); filter: saturate(.9); }
+.team-card:hover .team-img-wrap img { transform: scale(1.04); filter: saturate(1); }
+.team-info { padding: 22px 22px 26px; }
+.team-name { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; color: var(--ink); }
+.team-role { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage); margin: 5px 0 12px; }
+.team-bio { font-size: .82rem; color: #667a6c; font-weight: 300; line-height: 1.65; }
+
+/* ═══════════════════════════════════
+   PLACE
+═══════════════════════════════════ */
+.place { background: var(--white); }
+.place-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: center; }
+.place-mosaic {
+  display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 280px 280px; gap: 8px;
+}
+.pm-item { overflow: hidden; position: relative; }
+.pm-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.pm-item:hover img { transform: scale(1.05); }
+.pm-item.pm-tall { grid-row: 1 / 3; }
+.place-features { list-style: none; margin-top: 32px; display: flex; flex-direction: column; gap: 13px; }
+.place-features li {
+  display: flex; align-items: flex-start; gap: 14px;
+  font-size: .88rem; color: #4e6054; font-weight: 300; line-height: 1.6;
+}
+.pf-dot {
+  width: 20px; height: 20px; border-radius: 50%; background: var(--sage-pale);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.pf-dot::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--sage); }
+.place-cta { margin-top: 40px; }
+
+/* ═══════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════ */
+.testimonials {
+  background: var(--ink); position: relative; overflow: hidden;
+}
+.testimonials::before {
+  content: ''; position: absolute; top: -120px; right: -120px;
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,148,120,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.testimonials .eyebrow { color: var(--sage-light); }
+.testimonials h2 { color: var(--white); margin: 16px 0 52px; }
+.test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.test-card {
+  padding: 40px 36px; background: rgba(255,255,255,.03);
+  border-top: 1px solid rgba(163,191,170,.2);
+  transition: background .25s;
+}
+.test-card:hover { background: rgba(255,255,255,.06); }
+.quote-mark {
+  font-family: var(--serif); font-size: 4rem; color: var(--sage);
+  line-height: .8; margin-bottom: 18px; opacity: .6;
+}
+.test-text {
+  font-family: var(--serif); font-size: 1.12rem; font-weight: 300;
+  font-style: italic; line-height: 1.8; color: rgba(255,255,255,.82);
+  margin-bottom: 32px;
+}
+.test-person { display: flex; align-items: center; gap: 14px; }
+.test-avatar { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; filter: saturate(.85); }
+.test-person-name { font-size: .82rem; color: rgba(255,255,255,.6); }
+.test-person-role { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--sage-light); margin-top: 3px; }
+
+/* ═══════════════════════════════════
+   FAMILY
+═══════════════════════════════════ */
+.family { display: grid; grid-template-columns: 1fr 1fr; padding: 0; }
+.family-visual {
+  position: relative; overflow: hidden; min-height: 560px;
+}
+.family-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.family-visual::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(107,85,64,.25) 0%, transparent 60%);
+}
+.family-content {
+  background: var(--warm-light); padding: 80px 64px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.family-content .eyebrow { color: var(--earth); margin-bottom: 18px; }
+.family-content h2 { color: var(--ink); margin-bottom: 24px; }
+.family-content p { font-size: .94rem; color: #6b5040; font-weight: 300; line-height: 1.9; margin-bottom: 16px; }
+.family-content .btn-earth { margin-top: 20px; align-self: flex-start; }
+
+/* ═══════════════════════════════════
+   FAQ
+═══════════════════════════════════ */
+.faq { background: var(--mist); }
+.faq-header { margin-bottom: 56px; }
+.faq-header .eyebrow { margin-bottom: 16px; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 72px; }
+.faq-item {
+  border-top: 1px solid rgba(107,148,120,.18);
+  padding: 26px 0; cursor: pointer;
+}
+.faq-item:last-child { border-bottom: 1px solid rgba(107,148,120,.18); }
+.faq-q {
+  font-family: var(--serif); font-size: 1.08rem; font-weight: 500;
+  color: var(--ink); display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
+}
+.faq-q .faq-icon {
+  width: 22px; height: 22px; border: 1px solid var(--sage-light); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  font-size: .9rem; color: var(--sage); transition: all .25s; margin-top: 2px;
+}
+.faq-item.open .faq-icon { background: var(--sage); border-color: var(--sage); color: #fff; transform: rotate(45deg); }
+.faq-a {
+  font-size: .86rem; color: #667a6c; font-weight: 300; line-height: 1.85;
+  max-height: 0; overflow: hidden; transition: max-height .35s var(--ease), padding .35s;
+  padding-top: 0;
+}
+.faq-item.open .faq-a { max-height: 200px; padding-top: 14px; }
+
+/* ═══════════════════════════════════
+   CTA
+═══════════════════════════════════ */
+.cta-section {
+  background: var(--sage); position: relative; overflow: hidden;
+  padding: 104px 8vw;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.cta-section::before {
+  content: ''; position: absolute; bottom: -100px; left: -100px;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.08) 0%, transparent 70%);
+}
+.cta-left .eyebrow { color: rgba(255,255,255,.6); margin-bottom: 18px; }
+.cta-left h2 { color: #fff; margin-bottom: 18px; }
+.cta-left p { color: rgba(255,255,255,.78); font-size: .96rem; font-weight: 300; line-height: 1.85; }
+.cta-phone-block { margin-top: 36px; }
+.cta-phone {
+  font-family: var(--serif); font-size: 2rem; color: #fff; font-weight: 300;
+  letter-spacing: .02em;
+}
+.cta-phone-note { font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-top: 5px; }
+.cta-form { display: flex; flex-direction: column; gap: 10px; }
+.cta-form input {
+  background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28);
+  color: #fff; padding: 15px 20px; font-family: var(--sans); font-size: .9rem; outline: none;
+  transition: border-color .2s;
+}
+.cta-form input::placeholder { color: rgba(255,255,255,.45); }
+.cta-form input:focus { border-color: rgba(255,255,255,.65); }
+.cta-note { font-size: .72rem; color: rgba(255,255,255,.45); margin-top: 10px; line-height: 1.6; }
+
+/* ═══════════════════════════════════
+   FOOTER
+═══════════════════════════════════ */
+footer { background: var(--ink); color: rgba(255,255,255,.5); padding: 72px 8vw 40px; }
+.footer-grid { display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr; gap: 56px; margin-bottom: 56px; }
+.footer-brand .footer-logo { font-family: var(--serif); font-size: 1.55rem; color: #fff; margin-bottom: 16px; }
+.footer-brand .footer-logo span { color: var(--sage-light); }
+.footer-brand p { font-size: .84rem; line-height: 1.8; }
+.footer-brand .footer-contact { margin-top: 24px; font-family: var(--serif); font-size: 1rem; color: var(--sage-light); }
+.footer-col h4 { font-size: .64rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.28); margin-bottom: 20px; }
+.footer-col a { display: block; font-size: .84rem; color: rgba(255,255,255,.5); margin-bottom: 11px; transition: color .2s; }
+.footer-col a:hover { color: var(--sage-light); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.07); padding-top: 30px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: .74rem; flex-wrap: wrap; gap: 12px;
+}
+.footer-phone-lg { font-family: var(--serif); font-size: 1.05rem; color: var(--sage-light); }
+
+/* ═══════════════════════════════════
+   STICKY MOBILE CTA
+═══════════════════════════════════ */
+.mobile-sticky-cta {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 300;
+  background: var(--ink); padding: 14px 20px;
+  flex-direction: row; gap: 10px; align-items: center;
+  box-shadow: 0 -4px 24px rgba(0,0,0,.2);
+  border-top: 1px solid rgba(107,148,120,.2);
+}
+.sticky-call {
+  flex: 1; background: var(--sage); color: #fff; border: none;
+  padding: 14px; text-align: center; font-family: var(--sans);
+  font-size: .76rem; letter-spacing: .12em; text-transform: uppercase;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.sticky-write {
+  flex: 1; background: rgba(255,255,255,.07); color: rgba(255,255,255,.8);
+  border: 1px solid rgba(255,255,255,.15); padding: 14px; text-align: center;
+  font-family: var(--sans); font-size: .76rem; letter-spacing: .12em;
+  text-transform: uppercase; cursor: pointer;
+}
+
+/* ═══════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════ */
+.reveal {
+  opacity: 0; transform: translateY(32px);
+  transition: opacity .75s var(--ease), transform .75s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+.reveal-delay-4 { transition-delay: .4s; }
+
+/* ═══════════════════════════════════
+   HERO ANIMATIONS
+═══════════════════════════════════ */
+@keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+.hero-left .eyebrow { animation: fadeUp .8s .1s both; }
+.hero-left h1       { animation: fadeUp .8s .25s both; }
+.hero-left .hero-sub{ animation: fadeUp .8s .4s both; }
+.hero-left .hero-btns { animation: fadeUp .8s .55s both; }
+.hero-left .hero-note { animation: fadeUp .8s .7s both; }
+
+/* ═══════════════════════════════════
+   RESPONSIVE — TABLET
+═══════════════════════════════════ */
+@media (max-width: 1100px) {
+  #nav { padding: 0 4vw; }
+  .nav-links { gap: 22px; }
+  .section { padding: 80px 6vw; }
+  .about-grid { gap: 52px; }
+  .about-inset { display: none; }
+  .programs-grid { grid-template-columns: 1fr 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE — MOBILE
+═══════════════════════════════════ */
+@media (max-width: 768px) {
+  #nav { padding: 0 20px; height: 62px; }
+  .nav-links, .nav-right .btn { display: none; }
+  .nav-phone { font-size: .95rem; }
+  .hamburger { display: flex; }
+
+  /* Hero — single column */
+  .hero { grid-template-columns: 1fr; min-height: 100svh; }
+  .hero-left {
+    padding: 52px 20px 48px;
+    background: linear-gradient(180deg, var(--mist) 60%, rgba(248,246,242,.85) 100%);
+    position: relative; z-index: 2;
+  }
+  .hero-right {
+    position: absolute; inset: 0; z-index: 0;
+  }
+  .hero-right::after {
+    background: linear-gradient(180deg, rgba(248,246,242,.95) 0%, rgba(248,246,242,.7) 60%, rgba(248,246,242,.3) 100%);
+    left: 0; top: 0; bottom: 0; right: 0; width: auto;
+  }
+  .hero-left h1 { font-size: 2.7rem; }
+  .hero-left .hero-sub { font-size: .95rem; max-width: 100%; }
+  .hero-btns { flex-direction: column; }
+  .hero-btns .btn { text-align: center; justify-content: center; }
+  .hero-scroll { display: none; }
+
+  /* Trust */
+  .trust-bar { padding: 0; }
+  .trust-item { padding: 22px 12px; }
+  .trust-num { font-size: 1.9rem; }
+  .trust-label { font-size: .6rem; }
+
+  /* Loc */
+  .loc-strip { padding: 13px 20px; font-size: .72rem; }
+
+  /* Sections */
+  .section { padding: 56px 20px; }
+  .section-sm { padding: 48px 20px; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 44px; }
+  .about-main-img { height: 300px; }
+  .about-badge { top: auto; bottom: -16px; left: 16px; }
+  .about-badge strong { font-size: 2rem; }
+  .pillars { grid-template-columns: 1fr; }
+
+  /* Gallery */
+  .gallery-strip { grid-template-columns: repeat(3,1fr); height: 200px; }
+  .gallery-strip .gs-item:nth-child(4),
+  .gallery-strip .gs-item:nth-child(5) { display: none; }
+
+  /* Programs */
+  .programs-header { grid-template-columns: 1fr; gap: 16px; }
+  .programs-grid { grid-template-columns: 1fr; }
+
+  /* Process */
+  .process-steps { grid-template-columns: 1fr; gap: 32px; }
+  .process-line { display: none; }
+  .proc-step { text-align: left; display: flex; gap: 20px; align-items: flex-start; padding: 0; }
+  .proc-num { flex-shrink: 0; margin: 0; width: 52px; height: 52px; font-size: 1.3rem; }
+
+  /* Team */
+  .team-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .team-img-wrap { height: 200px; }
+
+  /* Place */
+  .place-grid { grid-template-columns: 1fr; gap: 40px; }
+  .place-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 170px 170px; }
+  .pm-item.pm-tall { grid-row: auto; }
+
+  /* Testimonials */
+  .test-grid { grid-template-columns: 1fr; }
+
+  /* Family */
+  .family { grid-template-columns: 1fr; }
+  .family-visual { min-height: 260px; }
+  .family-content { padding: 52px 20px; }
+
+  /* FAQ */
+  .faq-grid { grid-template-columns: 1fr; }
+
+  /* CTA */
+  .cta-section { grid-template-columns: 1fr; gap: 44px; padding: 56px 20px 100px; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  /* Sticky CTA */
+  .mobile-sticky-cta { display: flex; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav id="nav">
+  <div class="nav-logo">Monte<span>Rehab</span></div>
+  <ul class="nav-links">
+    <li><a href="#programs">Addiction</a></li>
+    <li><a href="#programs">Mental Health</a></li>
+    <li><a href="#programs">Eating Disorders</a></li>
+    <li><a href="#place">Our Centre</a></li>
+    <li><a href="#contact">Pricing</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:+38269621111" class="nav-phone">+382 69 621 111</a>
+    <a href="#contact" class="btn btn-sage">Get in touch</a>
+  </div>
+  <button class="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Montenegro · Residential Rehabilitation</div>
+    <h1>A new chapter<br>begins <em>here</em></h1>
+    <p class="hero-sub">We help people reclaim their lives from addiction — and find their way back to themselves, to their families, to a life worth living.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-sage">Talk to us — no commitment</a>
+      <a href="#programs" class="btn btn-outline">See our programmes</a>
+    </div>
+    <p class="hero-note">Completely confidential. We're here to listen, not to judge.</p>
+  </div>
+  <div class="hero-right">
+    <img id="hero-img"
+      src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=1200&q=85&auto=format&fit=crop"
+      alt="Montenegro coastline">
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ═══════════ TRUST BAR ═══════════ -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <span class="trust-num" data-count="12">0</span>
+    <span class="trust-label">Years experience</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-num" data-count="800">0</span>
+    <span class="trust-label">Lives transformed</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-num" data-count="18">0</span>
+    <span class="trust-label">Specialists on staff</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-num">24/7</span>
+    <span class="trust-label">Always available</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-num" data-count="6">0</span>
+    <span class="trust-label">Countries served</span>
+  </div>
+</div>
+
+<!-- ═══════════ LOCATION ═══════════ -->
+<div class="loc-strip">
+  <div class="dot"></div>
+  Budva, Montenegro
+  <span>—</span>
+  Adriatic coast · Private setting · 1 hr from Tivat Airport
+</div>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section class="about section">
+  <div class="about-grid">
+    <div class="about-visual reveal">
+      <div class="about-badge">
+        <strong>800+</strong>
+        <span>Lives changed</span>
+      </div>
+      <img class="about-main-img"
+        src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=85&auto=format&fit=crop"
+        alt="Rehabilitation centre">
+      <img class="about-inset"
+        src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80&auto=format&fit=crop"
+        alt="Therapy space">
+    </div>
+    <div class="about-text">
+      <div class="eyebrow reveal">Who we are</div>
+      <h2 class="display reveal reveal-delay-1">Recovery is not<br>punishment. It's a <em>journey</em>.</h2>
+      <p class="reveal reveal-delay-2">Monte Rehab is not a hospital with locked doors and strict schedules. It is a place where each person is met with genuine care and a personalised plan — built around who they are, not just their diagnosis.</p>
+      <p class="reveal reveal-delay-2">Our team of doctors, psychologists, and addiction specialists work together to guide each resident through detox, therapy, and the deeper work of building a life without dependency.</p>
+      <div class="pillars">
+        <div class="pillar reveal reveal-delay-2"><div class="pillar-title">No judgment</div><p>Addiction is not a moral failure. Every person is treated with full dignity.</p></div>
+        <div class="pillar reveal reveal-delay-3"><div class="pillar-title">Individual approach</div><p>No two people are the same. Neither are their treatment plans.</p></div>
+        <div class="pillar reveal reveal-delay-3"><div class="pillar-title">Confidential</div><p>Your privacy is fully protected from the very first call.</p></div>
+        <div class="pillar reveal reveal-delay-4"><div class="pillar-title">Long-term focus</div><p>We prepare you for life after the centre, not just the stay within it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ GALLERY STRIP ═══════════ -->
+<div class="gallery-strip">
+  <div class="gs-item">
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80&auto=format&fit=crop" alt="Montenegro nature">
+    <div class="gs-overlay"></div>
+  </div>
+  <div class="gs-item">
+    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=500&q=80&auto=format&fit=crop" alt="Villa">
+    <div class="gs-overlay"></div>
+  </div>
+  <div class="gs-item">
+    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500&q=80&auto=format&fit=crop" alt="Wellness">
+    <div class="gs-overlay"></div>
+  </div>
+  <div class="gs-item">
+    <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=400&q=80&auto=format&fit=crop" alt="Nature path">
+    <div class="gs-overlay"></div>
+  </div>
+  <div class="gs-item">
+    <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=400&q=80&auto=format&fit=crop" alt="Sunrise">
+    <div class="gs-overlay"></div>
+  </div>
+</div>
+
+<!-- ═══════════ PROGRAMS ═══════════ -->
+<section class="programs section" id="programs">
+  <div class="programs-header">
+    <div>
+      <div class="eyebrow reveal">What we treat</div>
+      <h2 class="display reveal reveal-delay-1">Every kind of dependency<br>deserves <em>care</em></h2>
+    </div>
+    <p class="reveal reveal-delay-2">Whether substance dependency, behavioural addiction, or a combination of both — our team has the expertise and the compassion to help. We don't believe in one-size-fits-all treatment.</p>
+  </div>
+  <div class="programs-grid">
+    <div class="prog-card reveal">
+      <div class="prog-img-wrap">
+        <img src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=600&q=80&auto=format&fit=crop" alt="Alcohol & Drug">
+        <span class="prog-tag">Residential</span>
+      </div>
+      <div class="prog-body">
+        <h3>Alcohol & Drug Addiction</h3>
+        <p>Medically supervised detox followed by residential rehabilitation — addressing both physical and psychological dimensions of dependency.</p>
+        <a href="#" class="prog-link">Learn more <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+    <div class="prog-card reveal reveal-delay-1">
+      <div class="prog-img-wrap">
+        <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&q=80&auto=format&fit=crop" alt="Behavioural">
+        <span class="prog-tag">Specialist</span>
+      </div>
+      <div class="prog-body">
+        <h3>Behavioural Addictions</h3>
+        <p>Gambling, gaming, shopping, sexual addiction — compulsive patterns that cause real harm and respond well to specialised therapeutic work.</p>
+        <a href="#" class="prog-link">Learn more <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+    <div class="prog-card reveal reveal-delay-2">
+      <div class="prog-img-wrap">
+        <img src="https://images.unsplash.com/photo-1493836512294-502baa1986e2?w=600&q=80&auto=format&fit=crop" alt="Mental Health">
+        <span class="prog-tag">Dual Diagnosis</span>
+      </div>
+      <div class="prog-body">
+        <h3>Mental Health & Dual Diagnosis</h3>
+        <p>Depression, anxiety, burnout, PTSD — often intertwined with addiction. We treat both simultaneously, because healing requires the whole person.</p>
+        <a href="#" class="prog-link">Learn more <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+    <div class="prog-card reveal reveal-delay-1">
+      <div class="prog-img-wrap">
+        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&q=80&auto=format&fit=crop" alt="Medical Detox">
+        <span class="prog-tag">Medical</span>
+      </div>
+      <div class="prog-body">
+        <h3>Medical Detox</h3>
+        <p>Safe, comfortable withdrawal under round-the-clock medical supervision. The first step — taken together with a team that truly cares.</p>
+        <a href="#" class="prog-link">Learn more <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+    <div class="prog-card reveal reveal-delay-2">
+      <div class="prog-img-wrap">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80&auto=format&fit=crop" alt="Eating Disorders">
+        <span class="prog-tag">Specialist</span>
+      </div>
+      <div class="prog-body">
+        <h3>Eating Disorders</h3>
+        <p>Anorexia, bulimia, compulsive eating — complex conditions requiring a team approach: medicine, psychology, and nutritional care together.</p>
+        <a href="#" class="prog-link">Learn more <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+    <div class="prog-card reveal reveal-delay-3">
+      <div class="prog-img-wrap">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&q=80&auto=format&fit=crop" alt="Online Therapy">
+        <span class="prog-tag">Remote</span>
+      </div>
+      <div class="prog-body">
+        <h3>Online Group Therapy</h3>
+        <p>Support after residential treatment — or a first step for those not yet ready to come in person. A safe, structured space online.</p>
+        <a href="#" class="prog-link">Learn more <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M9 1l4 4-4 4M13 5H1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PROCESS ═══════════ -->
+<section class="process section">
+  <div class="process-header">
+    <div class="eyebrow reveal">How it works</div>
+    <h2 class="display reveal reveal-delay-1">The first step is<br>always the <em>hardest</em></h2>
+    <p class="body-lead reveal reveal-delay-2" style="margin-top:16px;">We've made every subsequent one as clear and gentle as possible.</p>
+  </div>
+  <div class="process-steps">
+    <div class="process-line"></div>
+    <div class="proc-step reveal">
+      <div class="proc-num">1</div>
+      <h4>A quiet conversation</h4>
+      <p>Call or write to us. No forms, no pressure. We listen — you decide what happens next.</p>
+    </div>
+    <div class="proc-step reveal reveal-delay-1">
+      <div class="proc-num">2</div>
+      <h4>Assessment & plan</h4>
+      <p>Our specialists build a personalised programme — medical, psychological, practical.</p>
+    </div>
+    <div class="proc-step reveal reveal-delay-2">
+      <div class="proc-num">3</div>
+      <h4>Arrival & detox</h4>
+      <p>We handle the logistics. A safe, supervised transition from use to clarity.</p>
+    </div>
+    <div class="proc-step reveal reveal-delay-3">
+      <div class="proc-num">4</div>
+      <h4>Rehabilitation & life after</h4>
+      <p>Deep therapeutic work, lasting skills, and support that continues beyond the stay.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TEAM ═══════════ -->
+<section class="team section">
+  <div class="team-header">
+    <div class="eyebrow reveal">Our people</div>
+    <h2 class="display reveal reveal-delay-1">The team behind<br>your <em>recovery</em></h2>
+  </div>
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <div class="team-img-wrap">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=80&auto=format&fit=crop" alt="Dr. Elena Kovač">
+      </div>
+      <div class="team-info">
+        <div class="team-name">Dr. Elena Kovač</div>
+        <div class="team-role">Chief Psychiatrist</div>
+        <div class="team-bio">20 years in addiction medicine. Leads our clinical team and oversees all individual treatment plans.</div>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-delay-1">
+      <div class="team-img-wrap">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=80&auto=format&fit=crop" alt="Marko Petrović">
+      </div>
+      <div class="team-info">
+        <div class="team-name">Marko Petrović</div>
+        <div class="team-role">Lead Psychologist</div>
+        <div class="team-bio">Specialises in trauma-informed care and dual diagnosis. Leads individual therapy.</div>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-delay-2">
+      <div class="team-img-wrap">
+        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500&q=80&auto=format&fit=crop" alt="Anna Sorokina">
+      </div>
+      <div class="team-info">
+        <div class="team-name">Anna Sorokina</div>
+        <div class="team-role">Family Therapist</div>
+        <div class="team-bio">Works with residents and their families throughout the recovery journey.</div>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-delay-3">
+      <div class="team-img-wrap">
+        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=500&q=80&auto=format&fit=crop" alt="Dr. Ivan Milošević">
+      </div>
+      <div class="team-info">
+        <div class="team-name">Dr. Ivan Milošević</div>
+        <div class="team-role">Medical Director</div>
+        <div class="team-bio">Heads our detox and medical unit. Available around the clock for all residents.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PLACE ═══════════ -->
+<section class="place section" id="place">
+  <div class="place-grid">
+    <div class="place-mosaic reveal">
+      <div class="pm-item pm-tall">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=80&auto=format&fit=crop" alt="Centre exterior">
+      </div>
+      <div class="pm-item">
+        <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500&q=80&auto=format&fit=crop" alt="Private room">
+      </div>
+      <div class="pm-item">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=500&q=80&auto=format&fit=crop" alt="Gardens">
+      </div>
+    </div>
+    <div class="place-text">
+      <div class="eyebrow reveal">Our centre</div>
+      <h2 class="display reveal reveal-delay-1">A place that<br><em>feels</em> like healing</h2>
+      <p class="body-lead reveal reveal-delay-2">Set against the mountains and sea of Montenegro, our residential centre was designed to be calming, private, and truly restorative.</p>
+      <ul class="place-features">
+        <li class="reveal reveal-delay-2"><div class="pf-dot"></div>Private rooms with natural light and outdoor access</li>
+        <li class="reveal reveal-delay-2"><div class="pf-dot"></div>Therapy rooms, group spaces, and quiet reflection zones</li>
+        <li class="reveal reveal-delay-3"><div class="pf-dot"></div>Gardens, walking paths, and direct access to nature</li>
+        <li class="reveal reveal-delay-3"><div class="pf-dot"></div>Nutritious meals prepared daily by our kitchen team</li>
+        <li class="reveal reveal-delay-3"><div class="pf-dot"></div>Gym, yoga studio, and wellness facilities</li>
+        <li class="reveal reveal-delay-4"><div class="pf-dot"></div>Medical unit staffed 24 hours a day</li>
+        <li class="reveal reveal-delay-4"><div class="pf-dot"></div>One hour from Tivat International Airport</li>
+      </ul>
+      <div class="place-cta reveal reveal-delay-4">
+        <a href="#contact" class="btn btn-sage">Request a visit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TESTIMONIALS ═══════════ -->
+<section class="testimonials section noise">
+  <div class="eyebrow">Stories of recovery</div>
+  <h2 class="display">In their <em>own</em> words</h2>
+  <div class="test-grid">
+    <div class="test-card reveal">
+      <div class="quote-mark">"</div>
+      <p class="test-text">I was convinced no one could help me. I'd been to two other places before. Monte Rehab was different — they treated me like a human being from the very first call.</p>
+      <div class="test-person">
+        <img class="test-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80&auto=format&fit=crop" alt="">
+        <div><div class="test-person-name">Andrei, 38</div><div class="test-person-role">Alcohol · 2 years sober</div></div>
+      </div>
+    </div>
+    <div class="test-card reveal reveal-delay-1">
+      <div class="quote-mark">"</div>
+      <p class="test-text">My daughter is a different person. The team kept us informed every step of the way and included us in the process. I felt like we were all in it together.</p>
+      <div class="test-person">
+        <img class="test-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80&auto=format&fit=crop" alt="">
+        <div><div class="test-person-name">Marina</div><div class="test-person-role">Parent of a resident</div></div>
+      </div>
+    </div>
+    <div class="test-card reveal reveal-delay-2">
+      <div class="quote-mark">"</div>
+      <p class="test-text">I thought I was just a gambling addict. They helped me understand what was underneath it. That was the real work — and it changed everything.</p>
+      <div class="test-person">
+        <img class="test-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80&auto=format&fit=crop" alt="">
+        <div><div class="test-person-name">Dmitri, 44</div><div class="test-person-role">Gambling · 3 years in recovery</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FAMILY ═══════════ -->
+<section class="family">
+  <div class="family-visual reveal">
+    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=80&auto=format&fit=crop" alt="Family">
+  </div>
+  <div class="family-content">
+    <div class="eyebrow reveal">For loved ones</div>
+    <h2 class="display reveal reveal-delay-1">Your person isn't ready.<br><em>That's okay.</em></h2>
+    <p class="reveal reveal-delay-2">Most families reach us before their loved one does. If someone in your life is struggling — and won't admit it or won't seek help — you don't have to figure it out alone.</p>
+    <p class="reveal reveal-delay-2">We can walk you through what you're seeing, explain how addiction works, and help you understand what you can and cannot control. Sometimes the conversation with a family member is where recovery begins.</p>
+    <a href="#contact" class="btn btn-earth reveal reveal-delay-3">Talk to us about a loved one</a>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="faq section">
+  <div class="faq-header">
+    <div class="eyebrow reveal">Questions people ask</div>
+    <h2 class="display reveal reveal-delay-1">We understand it can be<br><em>hard to ask</em></h2>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">Will my privacy be protected? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Completely. We do not share any information about residents with anyone outside our team without explicit consent. Many of our residents value this above everything else.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q">How long does treatment take? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Programmes typically run from 4 weeks to 6 months, depending on the person and the nature of the dependency. We'll recommend what we genuinely believe is right for the individual — never what's most convenient for us.</div>
+    </div>
+    <div class="faq-item reveal reveal-delay-1" onclick="toggleFaq(this)">
+      <div class="faq-q">What if my loved one refuses to go? <span class="faq-icon">+</span></div>
+      <div class="faq-a">This is very common. Call us anyway — we can guide you through how to have the conversation, what to do and what not to do, and what options exist when someone is not yet ready to seek help.</div>
+    </div>
+    <div class="faq-item reveal reveal-delay-1" onclick="toggleFaq(this)">
+      <div class="faq-q">Can family visit during treatment? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes — family involvement is a core part of our programme. We structure visits carefully so they support recovery rather than disrupting it. Family therapy sessions are also available.</div>
+    </div>
+    <div class="faq-item reveal reveal-delay-2" onclick="toggleFaq(this)">
+      <div class="faq-q">What happens after leaving the centre? <span class="faq-icon">+</span></div>
+      <div class="faq-a">We don't stop at discharge. Every resident leaves with an aftercare plan — online therapy, support groups, follow-up sessions with their therapist. Recovery is a long road; we stay on it with you.</div>
+    </div>
+    <div class="faq-item reveal reveal-delay-2" onclick="toggleFaq(this)">
+      <div class="faq-q">Do you treat addiction and mental health together? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes. Dual diagnosis — addiction alongside depression, anxiety, trauma, or other conditions — is something we specialise in. Treating only one part of the picture rarely leads to lasting recovery.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA ═══════════ -->
+<section class="cta-section noise" id="contact">
+  <div class="cta-left reveal">
+    <div class="eyebrow">Take the first step</div>
+    <h2 class="display">Just a conversation.<br>No commitment required.</h2>
+    <p>Leave your details and we'll call you back — discreetly, at a time that works for you. Or call us directly, any time of day or night.</p>
+    <div class="cta-phone-block">
+      <div class="cta-phone">+382 69 621 111</div>
+      <div class="cta-phone-note">Available 24 hours a day</div>
+    </div>
+  </div>
+  <div class="reveal reveal-delay-2">
+    <div class="cta-form">
+      <input type="text" placeholder="Your name">
+      <input type="tel" placeholder="Phone number">
+      <input type="email" placeholder="Email (optional)">
+      <textarea rows="3" placeholder="What's on your mind? (optional)" style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;padding:15px 20px;font-family:var(--sans);font-size:.9rem;outline:none;resize:none;transition:border-color .2s;" onfocus="this.style.borderColor='rgba(255,255,255,.65)'" onblur="this.style.borderColor='rgba(255,255,255,.28)'"></textarea>
+      <button class="btn btn-white">Request a call back</button>
+      <p class="cta-note">Your information is fully confidential and will not be shared with anyone. We typically respond within one hour.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Monte<span>Rehab</span></div>
+      <p>A residential rehabilitation centre in Montenegro, helping people recover from addiction and reclaim their lives since 2012. Residential, outpatient, and online programmes available.</p>
+      <div class="footer-contact"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f99496978d9c979c9e8b968b9c91989bb99e94989095d79a9694">[email&#160;protected]</a></div>
+    </div>
+    <div class="footer-col">
+      <h4>Addiction</h4>
+      <a href="#">Alcohol addiction</a>
+      <a href="#">Drug addiction</a>
+      <a href="#">Medical detox</a>
+      <a href="#">Behavioural addiction</a>
+      <a href="#">Dual diagnosis</a>
+    </div>
+    <div class="footer-col">
+      <h4>Mental Health</h4>
+      <a href="#">Depression</a>
+      <a href="#">Anxiety</a>
+      <a href="#">Executive burnout</a>
+      <a href="#">PTSD & Trauma</a>
+      <a href="#">Insomnia</a>
+    </div>
+    <div class="footer-col">
+      <h4>Centre</h4>
+      <a href="#">Our approach</a>
+      <a href="#">The team</a>
+      <a href="#">Facility & life here</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact & directions</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 Monte Rehab. All rights reserved.</span>
+    <span class="footer-phone-lg">+382 69 621 111</span>
+    <span>Budva, Montenegro</span>
+  </div>
+</footer>
+
+<!-- ═══════════ MOBILE STICKY CTA ═══════════ -->
+<div class="mobile-sticky-cta">
+  <a href="tel:+38269621111" class="sticky-call">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+    Call now
+  </a>
+  <a href="#contact" class="sticky-write">Write to us</a>
+</div>
+
+<!-- ═══════════ JAVASCRIPT ═══════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── Nav scroll ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+nav.classList.toggle('scrolled', window.scrollY > 60);
+
+/* ── Parallax hero image ── */
+const heroImg = document.getElementById('hero-img');
+if (heroImg) {
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y < window.innerHeight) {
+      heroImg.style.transform = `translateY(${y * 0.28}px) scale(1.05)`;
+    }
+  }, { passive: true });
+}
+
+/* ── Scroll reveal ── */
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => revealObserver.observe(el));
+
+/* ── Counter animation ── */
+function animateCounter(el, target, suffix) {
+  const dur = 1800;
+  const start = performance.now();
+  const step = (now) => {
+    const p = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(ease * target) + (suffix || '');
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const counterEls = document.querySelectorAll('.trust-num[data-count]');
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const target = parseInt(e.target.dataset.count);
+      const suffix = target >= 100 ? '+' : (target === 12 ? '+' : '');
+      animateCounter(e.target, target, suffix);
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+counterEls.forEach(el => counterObserver.observe(el));
+
+/* ── FAQ accordion ── */
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  docume

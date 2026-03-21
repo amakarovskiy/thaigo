@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://monterehab.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/pricing"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/pricing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/pricing"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/contacts</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/contacts"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/contacts"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/contacts"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/contacts"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/residential_treatment</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/residential_treatment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/residential_treatment"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/stacionarno_leenje"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/residential_treatment"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/group_therapy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/group_therapy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/group_therapy"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/grupna_terapija_online"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/group_therapy"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/alcohol_addiction</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/alcohol_addiction"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/alcohol_addiction"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/zavisnost_od_alkohola"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/alcohol_addiction"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/drug_addiction</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/drug_addiction"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/drug_addiction"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/zavisnost_od_droga"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/drug_addiction"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/medical_detox</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/medical_detox"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/medical_detox"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/medicinska_detoksikacija"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/medical_detox"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/behavioural_addiction_treatment</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/behavioural_addiction_treatment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/behavioural_addiction_treatment"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/leenje_ponaajnih"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/behavioural_addiction_treatment"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/dual_diagnosis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/dual_diagnosis"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/dual_diagnosis"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/dvojna_dijagnoza"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/dual_diagnosis"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/anxiety_treatment</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/anxiety_treatment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/anxiety_treatment"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/leenje_anksioznosti"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/anxiety_treatment"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/depression_treatment</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/depression_treatment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/depression_treatment"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/leenje_depresije"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/depression_treatment"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/executive_burnout</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/executive_burnout"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/executive_burnout"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/izgaranje_na_poslu_kod_rukovodilaca"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/executive_burnout"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/insomnia_treatment</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/insomnia_treatment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/insomnia_treatment"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/leenje_nesanice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/insomnia_treatment"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/mood_disorder_treatment</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/mood_disorder_treatment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/mood_disorder_treatment"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/leenje_poremeaja_raspoloenja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/mood_disorder_treatment"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://monterehab.com/ptsd_and_trauma_treatment</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://monterehab.com/ptsd_and_trauma_treatment"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/ptsd_and_trauma_treatment"/>
+    <xhtml:link rel="alternate" hreflang="me" href="https://monterehab.com/me/leenje_ptsp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://monterehab.com/ptsd_and_trauma_treatment"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

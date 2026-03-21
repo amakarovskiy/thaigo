@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лечение расстройства настроения в Черногории — MonteRehab</title>
+<meta name="description" content="Лечение депрессивных, биполярных и сезонных расстройств настроения в Черногории. Особая терапевтическая среда.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://monterehab.com/ru/mood_disorder_treatment">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Лечение расстройства настроения — Monte Rehab">
+<meta property="og:description" content="Лечение депрессивных, биполярных и сезонных расстройств настроения в Черногории. Особая терапевтическая среда.">
+<meta property="og:url" content="https://monterehab.com/ru/mood_disorder_treatment">
+<meta property="og:image" content="https://images.unsplash.com/photo-1555990793-da11153b2473?w=1200&q=85&auto=format&fit=crop">
+<meta property="og:locale" content="ru_RU">
+<link rel="alternate" hreflang="en" href="https://monterehab.com/mood_disorder_treatment">
+<link rel="alternate" hreflang="ru" href="https://monterehab.com/ru/mood_disorder_treatment">
+<link rel="alternate" hreflang="me" href="https://monterehab.com/me/leenje_poremeaja_raspoloenja">
+<link rel="alternate" hreflang="x-default" href="https://monterehab.com/mood_disorder_treatment">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://thb.tildacdn.com">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236b9478'/><text x='16' y='24' text-anchor='middle' font-family='Georgia' font-size='22' font-weight='bold' fill='white'>M</text></svg>" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --sage:        #6b9478;
+  --sage-mid:    #7fa88c;
+  --sage-light:  #a3bfaa;
+  --sage-pale:   #eaf2ec;
+  --sage-xpale:  #f3f8f4;
+  --warm:        #c8a066;
+  --warm-light:  #f2e8d5;
+  --earth:       #6b5540;
+  --ink:         #1a2318;
+  --ink-mid:     #2d3d2f;
+  --mist:        #f8f6f2;
+  --white:       #ffffff;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', sans-serif;
+  --ease:  cubic-bezier(.25,.46,.45,.94);
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--mist); color: var(--ink); line-height: 1.7; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--sans); font-size: .76rem;
+  letter-spacing: .14em; text-transform: uppercase;
+  padding: 14px 32px; cursor: pointer; border: none;
+  transition: all .28s var(--ease);
+}
+.btn-sage  { background: var(--sage);  color: #fff; }
+.btn-sage:hover  { background: var(--earth); transform: translateY(-1px); }
+.btn-earth { background: var(--earth); color: #fff; }
+.btn-earth:hover { background: var(--ink); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--sage); border: 1px solid var(--sage); }
+.btn-outline:hover { background: var(--sage); color: #fff; }
+
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 76px; padding: 0 5vw;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(248,246,242,.96);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(107,148,120,.12);
+  transition: box-shadow .3s;
+}
+.nav-logo { font-family: var(--serif); font-size: 1.55rem; font-weight: 500; color: var(--ink); }
+.nav-logo span { color: var(--sage); }
+.nav-links { display: flex; gap: 4px; list-style: none; position: relative; min-width: 0; flex: 1; }
+.nav-links > li { position: relative; }
+.nav-links > li > a {
+  display: block; padding: 8px 14px;
+  font-size: .76rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink); opacity: .58; transition: opacity .2s;
+  white-space: nowrap;
+}
+.nav-links > li > a:hover,
+.nav-links > li.has-drop:hover > a { opacity: 1; }
+.nav-drop {
+  position: absolute; top: calc(100% + 8px); left: 0;
+  background: var(--white); min-width: 240px;
+  box-shadow: 0 16px 48px rgba(0,0,0,.1);
+  border-top: 2px solid var(--sage);
+  opacity: 0; pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity .22s var(--ease), transform .22s var(--ease);
+  z-index: 100;
+}
+.nav-links > li.has-drop:hover .nav-drop {
+  opacity: 1; pointer-events: all; transform: translateY(0);
+}
+.nav-drop a {
+  display: block; padding: 11px 20px;
+  font-size: .78rem; color: var(--ink); opacity: .7;
+  border-bottom: 1px solid rgba(107,148,120,.08);
+  transition: background .15s, opacity .15s;
+}
+.nav-drop a:last-child { border-bottom: none; }
+.nav-drop a:hover { background: var(--sage-xpale); opacity: 1; }
+.nav-right { display: flex; align-items: center; gap: 24px; flex-shrink: 0; }
+.nav-phone { font-family: var(--serif); font-size: 1.1rem; font-weight: 500; color: var(--sage); white-space: nowrap; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
+.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all .3s; }
+
+.page-hero {
+  margin-top: 76px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 420px; overflow: hidden;
+}
+.page-hero-left {
+  background: var(--ink);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 72px 8vw 72px 8vw;
+  position: relative; overflow: hidden;
+}
+.page-hero-left::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,148,120,.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.breadcrumb {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.35); margin-bottom: 24px;
+}
+.breadcrumb a { color: rgba(255,255,255,.35); transition: color .2s; }
+.breadcrumb a:hover { color: var(--sage-light); }
+.breadcrumb .sep { opacity: .3; }
+.breadcrumb .current { color: var(--sage-light); }
+.page-hero-left h1 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  line-height: 1.1; color: var(--white); margin-bottom: 28px;
+}
+.page-hero-left h1 em { font-style: italic; color: var(--sage-light); }
+.page-hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.page-hero-right { position: relative; overflow: hidden; }
+.page-hero-right img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 8s ease;
+}
+.page-hero-right:hover img { transform: scale(1.04); }
+.page-hero-right::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(26,35,24,.25) 0%, transparent 50%);
+}
+
+.article-wrap {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 72px;
+  padding: 80px 8vw;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.article-body .lead-block {
+  border-left: 3px solid var(--sage);
+  padding-left: 28px; margin-bottom: 52px;
+}
+.article-body .lead-block p {
+  font-family: var(--serif); font-size: 1.28rem; font-weight: 300;
+  font-style: italic; line-height: 1.75; color: var(--ink-mid);
+}
+.article-body p {
+  font-size: .97rem; font-weight: 300; color: #4a5c50;
+  line-height: 1.9; margin-bottom: 20px;
+}
+.article-body h2 {
+  font-family: var(--serif); font-size: 1.9rem; font-weight: 400;
+  color: var(--ink); line-height: 1.2;
+  margin: 48px 0 18px;
+}
+.article-body h2 em { font-style: italic; color: var(--sage); }
+.article-body h3 {
+  font-family: var(--serif); font-size: 1.3rem; font-weight: 500;
+  color: var(--ink); margin: 36px 0 14px;
+}
+.article-body strong { color: var(--ink); font-weight: 500; }
+.feature-list { list-style: none; margin: 20px 0 32px; display: flex; flex-direction: column; gap: 10px; }
+.feature-list li {
+  display: flex; align-items: flex-start; gap: 14px;
+  font-size: .92rem; color: #4a5c50; font-weight: 300; line-height: 1.6;
+}
+.fl-dot {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--sage-pale); flex-shrink: 0; margin-top: 1px;
+  display: flex; align-items: center; justify-content: center;
+}
+.fl-dot::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--sage); }
+.info-box {
+  background: var(--sage-xpale); border-left: 3px solid var(--sage);
+  padding: 28px 32px; margin: 36px 0;
+}
+.info-box h4 {
+  font-family: var(--serif); font-size: 1.05rem; font-weight: 500;
+  color: var(--ink); margin-bottom: 10px;
+}
+.info-box p { font-size: .88rem; color: #4a5c50; font-weight: 300; line-height: 1.75; margin: 0; }
+.article-cta {
+  background: var(--sage); padding: 40px 44px; margin: 56px 0 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  flex-wrap: wrap;
+}
+.article-cta p {
+  font-family: var(--serif); font-size: 1.3rem; font-weight: 300;
+  color: #fff; line-height: 1.4; margin: 0; max-width: 420px;
+}
+.article-cta p em { font-style: italic; }
+
+.article-sidebar { display: flex; flex-direction: column; gap: 24px; }
+.sidebar-card {
+  background: var(--white); padding: 28px 26px;
+  box-shadow: 0 2px 16px rgba(0,0,0,.04);
+}
+.sidebar-card h4 {
+  font-size: .66rem; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(107,148,120,.7); margin-bottom: 16px;
+}
+.sidebar-card .s-phone {
+  font-family: var(--serif); font-size: 1.45rem; font-weight: 300;
+  color: var(--sage); display: block; margin-bottom: 6px;
+}
+.sidebar-card .s-note {
+  font-size: .74rem; color: #8a9e90; letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.sidebar-card .s-email {
+  font-size: .88rem; color: var(--ink); opacity: .6; margin-top: 10px; display: block;
+}
+.messenger-links { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.messenger-link {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 14px; background: var(--sage-xpale);
+  font-size: .82rem; color: var(--ink); transition: background .2s;
+}
+.messenger-link:hover { background: var(--sage-pale); }
+.messenger-link img { width: 20px; height: 20px; object-fit: contain; }
+.related-links { display: flex; flex-direction: column; gap: 2px; }
+.related-link {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px; background: var(--sage-xpale);
+  font-size: .84rem; color: var(--ink); transition: background .2s, color .2s;
+}
+.related-link:hover { background: var(--sage); color: #fff; }
+.related-link .rl-arrow { font-size: .8rem; opacity: .4; transition: opacity .2s, transform .2s; }
+.related-link:hover .rl-arrow { opacity: 1; transform: translateX(3px); }
+.pricing-teaser { background: var(--warm-light); padding: 28px; }
+.pricing-teaser h4 { font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; color: var(--earth); margin-bottom: 18px; }
+.pt-item { padding: 14px 0; border-bottom: 1px solid rgba(107,85,64,.12); }
+.pt-item:last-child { border-bottom: none; padding-bottom: 0; }
+.pt-name { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--earth); opacity: .7; margin-bottom: 4px; }
+.pt-price { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; color: var(--earth); }
+.pt-cta { margin-top: 20px; width: 100%; text-align: center; }
+
+.contact-cta { background: var(--ink); padding: 80px 8vw; }
+.contact-cta-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.contact-cta-text h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+.contact-cta-text h2 em { font-style: italic; color: var(--sage-light); }
+.contact-cta-text p { font-size: .92rem; color: rgba(255,255,255,.55); font-weight: 300; line-height: 1.8; margin-bottom: 20px; }
+.cta-phone { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; color: var(--white); }
+.contact-cta-btns { display: flex; flex-direction: column; gap: 14px; }
+.cta-messenger { display: flex; align-items: center; gap: 14px; padding: 16px 24px; background: rgba(255,255,255,.07); color: var(--white); font-size: .88rem; font-weight: 400; letter-spacing: .04em; border: 1px solid rgba(255,255,255,.12); transition: background .2s, border-color .2s; }
+.cta-messenger:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.25); }
+.cta-messenger img { width: 24px; height: 24px; object-fit: contain; }
+
+.footer-seo { background: var(--ink-mid); padding: 60px 8vw 36px; }
+.footer-seo-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px 32px;
+  margin-bottom: 44px;
+}
+.footer-seo-col h4 {
+  font-size: .62rem; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(255,255,255,.25); margin-bottom: 16px; padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.footer-seo-col a {
+  display: block; font-size: .8rem; color: rgba(255,255,255,.4);
+  margin-bottom: 8px; transition: color .2s; line-height: 1.4;
+}
+.footer-seo-col a:hover { color: var(--sage-light); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.06); padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: .72rem; color: rgba(255,255,255,.25); flex-wrap: wrap; gap: 10px;
+}
+.footer-bottom a { color: rgba(255,255,255,.25); transition: color .2s; }
+.footer-bottom a:hover { color: var(--sage-light); }
+.footer-logo-sm { font-family: var(--serif); font-size: 1.1rem; color: rgba(255,255,255,.4); }
+.footer-logo-sm span { color: var(--sage-light); }
+
+.mobile-cta {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 300;
+  background: var(--ink); padding: 12px 16px;
+  flex-direction: row; gap: 8px;
+  box-shadow: 0 -4px 24px rgba(0,0,0,.25);
+  border-top: 1px solid rgba(107,148,120,.2);
+}
+.mc-call {
+  flex: 1; background: var(--sage); color: var(--white); border: none;
+  padding: 13px; font-family: var(--sans); font-size: .74rem;
+  letter-spacing: .12em; text-transform: uppercase; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.mc-write {
+  flex: 1; background: rgba(255,255,255,.07); color: rgba(255,255,255,.75);
+  border: 1px solid rgba(255,255,255,.12); padding: 13px;
+  font-family: var(--sans); font-size: .74rem; letter-spacing: .12em;
+  text-transform: uppercase; cursor: pointer; text-align: center; display: flex;
+  align-items: center; justify-content: center;
+}
+
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: none; }
+.rv1 { transition-delay: .1s; }
+.rv2 { transition-delay: .2s; }
+.rv3 { transition-delay: .3s; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+.breadcrumb  { animation: fadeUp .6s .1s both; }
+.page-hero-left h1   { animation: fadeUp .7s .2s both; }
+.page-hero-cta       { animation: fadeUp .7s .35s both; }
+
+@media (max-width: 1100px) {
+  #nav { padding: 0 4vw; }
+  .article-wrap { grid-template-columns: 1fr 300px; gap: 48px; padding: 64px 5vw; }
+  .footer-seo-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .contact-cta-inner { gap: 48px; }
+}
+@media (max-width: 768px) {
+  #nav { padding: 0 20px; height: 62px; }
+  .nav-links, .nav-right .btn { display: none; }
+  .nav-phone { font-size: .9rem; }
+  .hamburger { display: flex; }
+  .page-hero { grid-template-columns: 1fr; min-height: auto; }
+  .page-hero-left { padding: 48px 20px 56px; }
+  .page-hero-left h1 { font-size: 2.4rem; }
+  .page-hero-right { height: 240px; position: relative; }
+  .page-hero-right img { position: absolute; }
+  .article-wrap { grid-template-columns: 1fr; gap: 48px; padding: 48px 20px; }
+  .article-sidebar { order: -1; }
+  .footer-seo { padding: 48px 20px 28px; }
+  .footer-seo-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .mobile-cta { display: flex; }
+  .contact-cta { padding: 56px 20px; }
+  .contact-cta-inner { grid-template-columns: 1fr; gap: 40px; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "О клинике", "item": "https://monterehab.com/ru/"},
+    {"@type": "ListItem", "position": 2, "name": "Душевное здоровье"},
+    {"@type": "ListItem", "position": 3, "name": "Лечение расстройства настроения", "item": "https://monterehab.com/ru/mood_disorder_treatment"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Monte<span>Rehab</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">О клинике</a></li>
+    <li class="has-drop">
+      <a href="#">Пищевое поведение ▾</a>
+      <div class="nav-drop">
+        <a href="residential_treatment.html">Реабилитационная программа</a>
+        <a href="group_therapy.html">Групповая онлайн-терапия</a>
+      </div>
+    </li>
+    <li class="has-drop">
+      <a href="#">Зависимости ▾</a>
+      <div class="nav-drop">
+        <a href="alcohol_addiction.html">Алкоголизм</a>
+        <a href="drug_addiction.html">Наркомания</a>
+        <a href="medical_detox.html">Детоксикация</a>
+        <a href="behavioural_addiction_treatment.html">Лечение поведенческой зависимости</a>
+        <a href="dual_diagnosis.html">Двойной диагноз</a>
+      </div>
+    </li>
+    <li class="has-drop">
+      <a href="#">Душевное здоровье ▾</a>
+      <div class="nav-drop">
+        <a href="anxiety_treatment.html">Лечение тревоги</a>
+        <a href="depression_treatment.html">Лечение депрессии</a>
+        <a href="executive_burnout.html">Выгорание на работе</a>
+        <a href="insomnia_treatment.html">Лечение бессонницы</a>
+        <a href="mood_disorder_treatment.html">Лечение расстройства настроения</a>
+        <a href="ptsd_and_trauma_treatment.html">Лечение ПТСР и травм</a>
+      </div>
+    </li>
+    <li><a href="pricing.html">Стоимость</a></li>
+    <li><a href="contacts.html">Контакты</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switch" style="font-size:.72rem;letter-spacing:.1em;"><a href="../mood_disorder_treatment.html" style="color:var(--ink);opacity:.45;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.45'" onclick="localStorage.setItem('mr_lang','en')">EN</a> | <strong style="color:var(--sage)">RU</strong> | <a href="../me/leenje_poremeaja_raspoloenja.html" style="color:var(--ink);opacity:.45;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.45'" onclick="localStorage.setItem('mr_lang','me')">ME</a></div>
+    <a href="tel:+38269621111" class="nav-phone">+382 69 621 111</a>
+    <a href="contacts.html" class="btn btn-sage">Связаться</a>
+  </div>
+  <button class="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-left">
+    <div class="breadcrumb">
+      <a href="index.html">О клинике</a>
+      <span class="sep">&rarr;</span>
+      <a href="#">Душевное здоровье</a>
+      <span class="sep">&rarr;</span>
+      <span class="current">Лечение расстройства настроения</span>
+    </div>
+    <h1>Лечение расстройства<br><em>настроения</em></h1>
+    <div class="page-hero-cta">
+      <a href="#enquiry" class="btn btn-sage">Оставить заявку</a>
+      <a href="tel:+38269621111" class="btn btn-outline">+382 69 621 111</a>
+    </div>
+  </div>
+  <div class="page-hero-right">
+    <img
+      src="https://thb.tildacdn.com/tild3932-3364-4139-a162-353233626565/-/resize/800x/mood.jpeg"
+      alt="Лечение расстройства настроения"
+      loading="lazy">
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<div class="article-wrap">
+
+  <article class="article-body">
+
+    <div class="lead-block reveal">
+      <p>Время от времени каждый будет испытывать чувство грусти, печали и меланхолии. Например, возможно, вы недавно расстались со своим партнером, у вас был семейный конфликт или вы пропустили крайний срок выполнения проекта.</p>
+    </div>
+
+    <p class="reveal rv1">Но если преобладают негативные эмоции, вас месяцами ничто не радует, и вы не обретете гармонии с окружающим миром. Это симптомы расстройства настроения.</p>
+
+    <p class="reveal rv2">Депрессивное расстройство, сезонное аффективное расстройство, биполярное расстройство, расстройство адаптации, тревога и т.д. — все это разновидности расстройства настроения, на которые не было своевременного реагирования.</p>
+
+    <h2 class="reveal">Расстройство настроения — это не просто период негативных эмоций</h2>
+
+    <p class="reveal rv1">Это заболевание, которое имеет разновидности и по-разному сказывается на вашем состоянии и на вашем здоровье.</p>
+
+    <p class="reveal rv2">Со временем расстройства настроения могут привести к дезадаптации или к потере способности адаптироваться к окружающей действительности. Неадекватные эмоциональные реакции разрушают личные отношения и делают невозможным продуктивную работу.</p>
+
+    <p class="reveal">Кроме того, расстройство настроения приводит к ухудшению самочувствия, раздражению, апатии, вялости, потере аппетита, отсутствию мотивации, чувству безнадежности и т.д.</p>
+
+    <p class="reveal rv1">Мы создаем особую среду, которая даст вам возможность разобраться в своих личных переживаниях, отдохнуть от повседневной рутины, восполнить свою жизненную энергию и научить вас справляться с трудностями, развивать здоровые привычки и контролировать свои эмоции.</p>
+
+    <div class="article-cta reveal">
+      <p>Готовы сделать первый шаг к <em>свободной жизни?</em></p>
+      <a href="#enquiry" class="btn btn-white" style="background:#fff;color:var(--sage);flex-shrink:0;">Оставить заявку</a>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="article-sidebar">
+
+    <div class="sidebar-card reveal">
+      <h4>Свяжитесь с нами</h4>
+      <a href="tel:+38269621111" class="s-phone">+382 69 621 111</a>
+      <div class="s-note">Доступно 24 часа в сутки</div>
+      <a href="mailto:montenegrorehab@gmail.com" class="s-email">montenegrorehab@gmail.com</a>
+      <div class="messenger-links">
+        <a href="https://wa.me/38269621111" class="messenger-link">
+          <img src="https://thb.tildacdn.com/tild6237-6666-4037-a363-386236386262/-/resize/40x/whatsapp.png" alt="WhatsApp" loading="lazy">
+          WhatsApp
+        </a>
+        <a href="https://t.me/+38269621111" class="messenger-link">
+          <img src="https://thb.tildacdn.com/tild3062-3034-4539-b463-313364613266/-/resize/40x/TG.png" alt="Telegram" loading="lazy">
+          Telegram
+        </a>
+        <a href="viber://chat?number=+38269621111" class="messenger-link">
+          <img src="https://thb.tildacdn.com/tild6161-6534-4930-b165-363338373665/-/resize/40x/pngwingcom.png" alt="Viber" loading="lazy">
+          Viber
+        </a>
+      </div>
+    </div>
+
+    <div class="sidebar-card reveal rv1">
+      <h4>Другие услуги</h4>
+      <div class="related-links">
+        <a href="anxiety_treatment.html" class="related-link">Лечение тревоги <span class="rl-arrow">&rarr;</span></a>
+        <a href="depression_treatment.html" class="related-link">Лечение депрессии <span class="rl-arrow">&rarr;</span></a>
+        <a href="executive_burnout.html" class="related-link">Выгорание на работе <span class="rl-arrow">&rarr;</span></a>
+        <a href="ptsd_and_trauma_treatment.html" class="related-link">Лечение ПТСР и травм <span class="rl-arrow">&rarr;</span></a>
+      </div>
+    </div>
+
+    <div class="pricing-teaser reveal rv2">
+      <h4>Стоимость программ</h4>
+      <div class="pt-item">
+        <div class="pt-name">Евростандарт (двухм.)</div>
+        <div class="pt-price">от &euro;6,000 / мес</div>
+      </div>
+      <div class="pt-item">
+        <div class="pt-name">Евростандарт (одном.)</div>
+        <div class="pt-price">от &euro;9,000 / мес</div>
+      </div>
+      <div class="pt-item">
+        <div class="pt-name">Интенсив</div>
+        <div class="pt-price">от &euro;12,000 / мес</div>
+      </div>
+      <a href="pricing.html" class="btn btn-earth pt-cta">Все цены</a>
+    </div>
+
+  </aside>
+</div>
+
+<section class="contact-cta" id="enquiry">
+  <div class="contact-cta-inner">
+    <div class="contact-cta-text">
+      <h2>Готовы начать путь к <em>выздоровлению?</em></h2>
+      <p>Свяжитесь с нами — мы работаем 24/7 и ответим немедленно.</p>
+      <div class="cta-phone">+382 69 621 111</div>
+    </div>
+    <div class="contact-cta-btns">
+      <a href="https://wa.me/38269621111" target="_blank" rel="noopener" class="cta-messenger cta-wa">
+        <img src="https://thb.tildacdn.com/tild6237-6666-4037-a363-386236386262/-/resize/40x/whatsapp.png" alt="WhatsApp" loading="lazy">
+        WhatsApp
+      </a>
+      <a href="https://t.me/RehabMontenegro" target="_blank" rel="noopener" class="cta-messenger cta-tg">
+        <img src="https://thb.tildacdn.com/tild3062-3034-4539-b463-313364613266/-/resize/40x/TG.png" alt="Telegram" loading="lazy">
+        Telegram
+      </a>
+      <a href="viber://chat?number=+38269621111" class="cta-messenger cta-vb">
+        <img src="https://thb.tildacdn.com/tild6161-6534-4930-b165-363338373665/-/resize/40x/pngwingcom.png" alt="Viber" loading="lazy">
+        Viber
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER SEO -->
+<footer class="footer-seo">
+  <div class="footer-seo-grid">
+    <div class="footer-seo-col">
+      <h4>Реабилитационная программа для алкоголиков</h4>
+      <a href="/ru/addiction_treatment">Лечение зависимостей</a>
+      <a href="/ru/chronic_alcoholism">Лечение хронического алкоголизма</a>
+      <a href="/ru/conclusion_from_drinking">Лечение запойного алкоголизма</a>
+      <a href="/ru/secret_alcoholism">Лечение тайного алкоголизма</a>
+      <a href="/ru/beer_alcoholism">Лечение пивного алкоголизма</a>
+      <a href="/ru/female_alcoholism">Лечение женского алкоголизма</a>
+      <a href="/ru/household_alcoholism">Лечение бытового алкоголизма</a>
+      <a href="/ru/permanent_alcoholism">Перманентный алкоголизм</a>
+    </div>
+    <div class="footer-seo-col">
+      <h4>Реабилитационная программа нехимических зависимостей</h4>
+      <a href="/ru/internet_addiction">Лечение интернет-зависимости</a>
+      <a href="/ru/gaming_addiction">Лечение игромании: игровой зависимости</a>
+      <a href="/ru/gambling_addiction">Лечение зависимости от азартных игр</a>
+      <a href="/ru/sexual_obsession">Лечение сексуальной, любовной зависимости - сексоголизма</a>
+      <a href="/ru/shopaholism">Лечение шопоголизма</a>
+      <h4 style="margin-top:24px;">Реабилитация при расстройствах пищевого поведения</h4>
+      <a href="/ru/anorexia">Лечение анорексии</a>
+      <a href="/ru/bulimia">Лечение булимии</a>
+      <a href="/ru/sugar_addiction">Лечение зависимости от сладкого</a>
+      <a href="/ru/energy_drink_addiction">Лечение зависимости от стимулирующих и энергетических напитков</a>
+    </div>
+    <div class="footer-seo-col">
+      <h4>Реабилитационная программа для наркозависимых</h4>
+      <a href="/ru/heroin_addiction">Лечение героиновой зависимости</a>
+      <a href="/ru/codeine_addiction">Лечение кодеиновой зависимости</a>
+      <a href="/ru/methadone_addiction">Лечение метадоновой зависимости</a>
+      <a href="/ru/cocaine_addiction">Лечение кокаиновой зависимости</a>
+      <a href="/ru/substance_abuse">Лечение токсикомании</a>
+      <a href="/ru/marijuana_addiction">Лечение зависимости от марихуаны</a>
+      <a href="/ru/spice_addiction">Лечение зависимости от СПАЙСов</a>
+      <a href="/ru/drugs_addiction">Лечение лекарственной зависимости</a>
+      <a href="/ru/salt_addiction">Лечение солевой зависимости</a>
+      <a href="/ru/amphetamine_addiction">Лечение амфетаминовой зависимости</a>
+    </div>
+    <div class="footer-seo-col">
+      <h4>Ещё</h4>
+      <a href="/ru/narco_addiction">Наркотическая зависимость</a>
+      <a href="/ru/clinic_drug_alcoholism">Клиника лечения наркомании и алкоголизма</a>
+      <a href="/ru/drug_rehabilitation_center">Реабилитационный центр для наркоманов</a>
+      <a href="/ru/addiction_treatment_center">Центр помощи наркозависимым</a>
+      <a href="/ru/addiction_treatment_clinic">Клиника лечения наркомании</a>
+      <a href="/ru/ecstasy_addiction">Лечение от экстази</a>
+      <a href="/ru/tramadol_addiction">Лечение от трамадола</a>
+      <a href="/ru/hashish_addiction">Лечение гашишной зависимости</a>
+      <a href="/ru/lsd_addiction">Лечение зависимости от LSD</a>
+      <a href="/ru/opiate_addiction">Лечение от опиатов</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-logo-sm">Monte<span>Rehab</span></span>
+    <span>&copy; Все права защищены</span>
+    <a href="/ru/privacy">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta">
+  <a href="tel:+38269621111" class="mc-call">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+    Позвонить
+  </a>
+  <a href="#enquiry" class="mc-write">Написать нам</a>
+</div>
+
+<!-- JS -->
+<script>
+const revEls = document.querySelectorAll('.reveal');
+revEls.forEach(el => {
+  new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.15 }).observe(el);
+});
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.boxShadow = window.scrollY > 60
+    ? '0 4px 24px rgba(0,0,0,.08)' : '0 1px 0 rgba(107,148,120,.12)';
+});
+document.querySelector('.hamburger').addEventListener('click', function() {
+  const links = document.querySelector('.nav-links');
+  links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+});
+</script>
+</body>
+</html>
